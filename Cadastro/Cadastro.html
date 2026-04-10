@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cadastro</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>Sistema de Cadastro</h1>
+    <span>Gestão de usuários</span>
+  </header>
+
+  <div class="wrapper">
+    <nav class="tabs" role="tablist">
+      <div class="tab active" role="tab" onclick="switchTab('cadastro', this)">Cadastro</div>
+      <div class="tab" role="tab" onclick="switchTab('listagem', this)">Listagem</div>
+      <div class="tab" role="tab" onclick="switchTab('config', this)">Configurações</div>
+    </nav>
+
+    <div id="panel-cadastro" class="panel active">
+      <div class="form-body">
+
+        <div id="toast" class="toast" role="alert">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+          Cadastro realizado com sucesso!
+        </div>
+
+        <div class="avatar-row">
+          <div class="avatar" id="avatar" title="Foto do perfil">?</div>
+          <div class="avatar-info">
+            <p>Foto do perfil</p>
+            <p>As iniciais serão geradas automaticamente pelo nome</p>
+          </div>
+        </div>
+
+        <div class="section-title">Dados pessoais</div>
+        <div class="grid">
+          <div class="field" id="f-nome">
+            <label for="nome">Nome <span class="req">*</span></label>
+            <input type="text" id="nome" placeholder="Ex: João" autocomplete="given-name" oninput="updateAvatar()">
+            <span class="msg">Campo obrigatório</span>
+          </div>
+          <div class="field" id="f-sobrenome">
+            <label for="sobrenome">Sobrenome</label>
+            <input type="text" id="sobrenome" placeholder="Ex: Silva" autocomplete="family-name">
+          </div>
+          <div class="field" id="f-cpf">
+            <label for="cpf">CPF <span class="req">*</span></label>
+            <input type="text" id="cpf" placeholder="000.000.000-00" maxlength="14" oninput="maskCPF(this)">
+            <span class="msg">Campo obrigatório</span>
+          </div>
+          <div class="field">
+            <label for="nascimento">Data de nascimento</label>
+            <input type="date" id="nascimento" autocomplete="bday">
+          </div>
+          <div class="field full">
+            <label for="genero">Gênero</label>
+            <select id="genero">
+              <option value="">Prefiro não informar</option>
+              <option>Masculino</option>
+              <option>Feminino</option>
+              <option>Outro</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="section-title">Contato</div>
+        <div class="grid">
+          <div class="field full" id="f-email">
+            <label for="email">E-mail <span class="req">*</span></label>
+            <input type="email" id="email" placeholder="seu@email.com" autocomplete="email">
+            <span class="msg">Informe um e-mail válido</span>
+          </div>
+          <div class="field">
+            <label for="telefone">Telefone</label>
+            <input type="text" id="telefone" placeholder="(81) 99999-0000" maxlength="15" oninput="maskPhone(this)" autocomplete="tel">
+          </div>
+          <div class="field">
+            <label for="perfil">Perfil de acesso</label>
+            <select id="perfil">
+              <option value="">Selecione...</option>
+              <option>Administrador</option>
+              <option>Usuário padrão</option>
+              <option>Visitante</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="section-title">Segurança</div>
+        <div class="grid">
+          <div class="field" id="f-senha">
+            <label for="senha">Senha <span class="req">*</span></label>
+            <input type="password" id="senha" placeholder="Mínimo 8 caracteres" oninput="checkStrength(this.value)">
+            <div class="strength-bar">
+              <span id="s1"></span><span id="s2"></span><span id="s3"></span><span id="s4"></span>
+            </div>
+            <div class="strength-label" id="strength-label">Digite uma senha</div>
+            <span class="msg">Campo obrigatório</span>
+          </div>
+          <div class="field" id="f-confirma">
+            <label for="confirma">Confirmar senha <span class="req">*</span></label>
+            <input type="password" id="confirma" placeholder="Repita a senha">
+            <span class="msg" id="msg-confirma">As senhas não coincidem</span>
+          </div>
+          <div class="field full">
+            <label for="obs">Observações</label>
+            <textarea id="obs" placeholder="Informações adicionais sobre o usuário..."></textarea>
+          </div>
+        </div>
+
+        <div class="btn-row">
+          <button class="btn btn-ghost" onclick="limpar()">Limpar</button>
+          <button class="btn btn-primary" onclick="salvar()">Salvar cadastro</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="panel-listagem" class="panel">
+      <div id="listagem-conteudo">
+        <div class="empty-state">
+          <strong>Nenhum registro encontrado</strong>
+          Realize o primeiro cadastro para visualizar aqui.
+        </div>
+      </div>
+    </div>
+
+    <div id="panel-config" class="panel">
+      <div class="empty-state">
+        <strong>Configurações do sistema</strong>
+        Nenhuma configuração disponível no momento.
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,3 +1,6 @@
+/* ===========================
+   Reset & Base
+   =========================== */
 * {
     margin: 0;
     padding: 0;
@@ -5,37 +8,57 @@
     font-family: "Poppins", sans-serif;
 }
 
+/* ===========================
+   Body — imagem de fundo
+   =========================== */
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     min-height: 100vh;
-    background-color: #0f3460;
+    background-image: url('./bg.png');
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+
+    /* Fallback caso a imagem não carregue */
+    background-color: #1a3a6e;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
+/* ===========================
+   Card de Login
+   =========================== */
 .container {
     position: relative;
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 16px;
-    padding: 36px 40px;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(245, 166, 35, 0.4);
+    border-radius: 20px;
+    padding: 40px 44px;
     width: 100%;
-    max-width: 380px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
 }
 
+/* ===========================
+   Título
+   =========================== */
 .container h1 {
-    font-size: 32px;
+    font-size: 34px;
     font-weight: 700;
-    color: #ffffff;
+    color: #f5a623;
     text-align: center;
-    margin-bottom: 28px;
-    letter-spacing: 1px;
+    margin-bottom: 32px;
+    letter-spacing: 2px;
 }
 
-
+/* ===========================
+   Campos de Input
+   =========================== */
 .input-box {
     position: relative;
     width: 100%;
@@ -45,44 +68,45 @@ body {
 .input-box input {
     width: 100%;
     height: 50px;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(245, 166, 35, 0.35);
     border-radius: 40px;
     outline: none;
     font-size: 14px;
     font-family: "Poppins", sans-serif;
-
     color: #ffffff;
-
-    padding: 0 46px 0 20px;
+    padding: 0 48px 0 20px;
     transition: border-color 0.3s, background 0.3s;
 }
 
 .input-box input::placeholder {
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(255, 255, 255, 0.4);
 }
 
 .input-box input:focus {
-    border-color: rgba(255, 255, 255, 0.65);
-    background: rgba(255, 255, 255, 0.13);
+    border-color: #f5a623;
+    background: rgba(245, 166, 35, 0.08);
 }
 
+/* Ícone dentro do campo */
 .input-box i {
     position: absolute;
     right: 18px;
     top: 50%;
     transform: translateY(-50%);
-    color: rgba(255, 255, 255, 0.6);
+    color: #f5a623;
     font-size: 20px;
     pointer-events: none;
 }
 
-
+/* ===========================
+   Lembrar / Esqueci a senha
+   =========================== */
 .remember-forgot {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 24px;
+    margin-bottom: 26px;
     font-size: 13px;
 }
 
@@ -90,64 +114,86 @@ body {
     display: flex;
     align-items: center;
     gap: 7px;
-    color: rgba(255, 255, 255, 0.75);
+    color: rgba(255, 255, 255, 0.8);
     cursor: pointer;
 }
 
 .remember-forgot input[type="checkbox"] {
-    accent-color: #ffffff;
+    accent-color: #1a3a6e;
     width: 15px;
     height: 15px;
     cursor: pointer;
 }
 
 .remember-forgot a {
-    color: rgba(255, 255, 255, 0.75);
+    color: #1a3a6e;
     text-decoration: none;
-    transition: color 0.2s;
+    font-weight: 500;
+    transition: opacity 0.2s;
 }
 
 .remember-forgot a:hover {
-    color: #ffffff;
+    opacity: 0.75;
     text-decoration: underline;
 }
 
+/* ===========================
+   Botão de Login
+   =========================== */
 button[type="submit"] {
     width: 100%;
-    height: 48px;
+    height: 50px;
     border: none;
     border-radius: 40px;
-    background: #ffffff;
-    color: #0f3460;
+    background: #1a3a6e;
+    color: #ffffff;
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 700;
     font-family: "Poppins", sans-serif;
     cursor: pointer;
     letter-spacing: 0.5px;
-    transition: background 0.3s, transform 0.1s;
+    transition: background 0.3s, transform 0.1s, box-shadow 0.3s;
+    box-shadow: 0 4px 18px rgba(245, 166, 35, 0.35);
 }
 
 button[type="submit"]:hover {
-    background: rgba(255, 255, 255, 0.88);
+    background: #e8970f;
+    box-shadow: 0 6px 24px rgba(245, 166, 35, 0.5);
 }
 
 button[type="submit"]:active {
     transform: scale(0.98);
 }
 
+/* ===========================
+   Link de Cadastro
+   =========================== */
 .register-link {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 22px;
     font-size: 13px;
-    color: rgba(255, 255, 255, 0.65);
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .register-link a {
-    color: #ffffff;
+    color: #1a3a6e;
     font-weight: 600;
     text-decoration: none;
+    transition: opacity 0.2s;
 }
 
 .register-link a:hover {
+    opacity: 0.75;
     text-decoration: underline;
+}
+
+/* ===========================
+   Responsivo
+   =========================== */
+@media (max-width: 480px) {
+    .container {
+        padding: 32px 24px;
+        margin: 0 16px;
+        border-radius: 16px;
+    }
 }

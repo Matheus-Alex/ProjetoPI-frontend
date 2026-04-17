@@ -1,0 +1,15 @@
+/* ── Upload ── */
+
+    .upload-area {
+      border: 2px dashed var(--orange-light);
+      border-radius: var(--radius);
+      padding: 36px 24px;
+      text-align: center;
+      cursor: pointer;
+      transition: background var(--transition), border-color var(--transition);
+    }
+
+    .upload-area:hover { background: var(--orange-pale); border-color: var(--orange); }
+    .upload-area i { font-size: 36px; color: var(--orange); display: block; margin-bottom: 10px; }
+    .upload-area p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+    .upload-area span { color: var(--orange); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }

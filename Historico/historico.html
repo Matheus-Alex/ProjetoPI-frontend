@@ -3,10 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
     <title>Historico</title>
 </head>
+
+<div class="title">
+    <h1>Histórico</h1>
+    <h2>Bem vindo, Administrador!</h2>
+    <h3>Veja o histórico de cursos e certificados dos alunos</h3>
+</div>
+
 <body>
     <input type="text" placeholder="buscar nome ou matricula">
+    <div class="container">
+  <p>Alunos:</p>
+</div>
     <table>
         <thead>
             <tr>
@@ -15,13 +26,24 @@
                 <th>Curso</th>
                 <th>Certificado</th>
                 <th>Status</th>
-                <div>
-                    <tbody>
-                        
-                    </tbody>
-                </div>
             </tr>
         </thead>
+        <tbody>
+            <tr>
+                <td>123456</td>
+                <td>João Silva</td>
+                <td>Engenharia de Software</td>
+                <td><a href="#">Certificado</a></td>
+                <td>Concluído</td>
+            </tr>
+            <tr>
+                <td>654321</td>
+                <td>Maria Oliveira</td>
+                <td>Ciência da Computação</td>
+                <td><a href="#">Certificado</a></td>
+                <td>Em andamento</td>
+            </tr>
     </table>
+
 </body>
 </html>

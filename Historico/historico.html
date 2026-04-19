@@ -1,49 +1,166 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css" />
-    <title>Historico</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <title>Histórico</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-
-<div class="title">
-    <h1>Histórico</h1>
-    <h2>Bem vindo, Administrador!</h2>
-    <h3>Veja o histórico de cursos e certificados dos alunos</h3>
-</div>
-
 <body>
-    <input type="text" placeholder="buscar nome ou matricula">
-    <div class="container">
-  <p>Alunos:</p>
-</div>
-    <table>
-        <thead>
-            <tr>
-                <th>Matricula</th>
-                <th>Nome</th>
-                <th>Curso</th>
-                <th>Certificado</th>
-                <th>Status</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>123456</td>
-                <td>João Silva</td>
-                <td>Engenharia de Software</td>
-                <td><a href="#">Certificado</a></td>
-                <td>Concluído</td>
-            </tr>
-            <tr>
-                <td>654321</td>
-                <td>Maria Oliveira</td>
-                <td>Ciência da Computação</td>
-                <td><a href="#">Certificado</a></td>
-                <td>Em andamento</td>
-            </tr>
+
+  <!-- Cabeçalho -->
+  <div class="page-header">
+    <h1>Histórico</h1>
+    <h2>Bem-vindo, Administrador!</h2>
+    <p>Veja o histórico de cursos e certificados dos alunos</p>
+  </div>
+
+  <!-- Toolbar -->
+  <div class="toolbar">
+    <div class="search-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#9aa0b4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"/>
+        <path d="m21 21-4.35-4.35"/>
+      </svg>
+      <input type="text" id="busca" placeholder="Buscar por nome ou matrícula...">
+    </div>
+
+    <div class="toolbar-right">
+      <label class="select-all-wrap">
+        <input type="checkbox" id="marcar-todos"> Marcar todos
+      </label>
+      <button class="btn-excluir">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="3 6 5 6 21 6"/>
+          <path d="M19 6l-1 14H6L5 6"/>
+          <path d="M10 11v6M14 11v6"/>
+          <path d="M9 6V4h6v2"/>
+        </svg>
+        Excluir selecionados
+      </button>
+    </div>
+  </div>
+
+  <!-- Tabela -->
+  <div class="card">
+    <div class="total-bar">Total: <strong>5 registros</strong></div>
+
+    <table id="tabela-historico">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Matrícula</th>
+          <th>Nome</th>
+          <th>Curso</th>
+          <th>Certificado</th>
+          <th>Status</th>
+          <th>Criado em</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr>
+          <td><input type="checkbox" class="linha-check" aria-label="Selecionar linha"></td>
+          <td class="td-id">#123456</td>
+          <td class="td-nome">João Silva</td>
+          <td class="td-curso">Engenharia de Software</td>
+          <td>
+            <a href="#" class="cert-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+              </svg>
+              Ver
+            </a>
+          </td>
+          <td><span class="badge badge-aprovado">Aprovado</span></td>
+          <td>26/05/2027</td>
+        </tr>
+
+        <tr>
+          <td><input type="checkbox" class="linha-check" aria-label="Selecionar linha"></td>
+          <td class="td-id">#654321</td>
+          <td class="td-nome">Maria Oliveira</td>
+          <td class="td-curso">Ciência da Computação</td>
+          <td>
+            <a href="#" class="cert-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+              </svg>
+              Ver
+            </a>
+          </td>
+          <td><span class="badge badge-avaliacao">Em avaliação</span></td>
+          <td>26/05/2026</td>
+        </tr>
+
+        <tr>
+          <td><input type="checkbox" class="linha-check" aria-label="Selecionar linha"></td>
+          <td class="td-id">#789012</td>
+          <td class="td-nome">Carlos Mendes</td>
+          <td class="td-curso">Administração</td>
+          <td>
+            <a href="#" class="cert-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+              </svg>
+              Ver
+            </a>
+          </td>
+          <td><span class="badge badge-rejeitado">Rejeitado</span></td>
+          <td>10/03/2026</td>
+        </tr>
+
+        <tr>
+          <td><input type="checkbox" class="linha-check" aria-label="Selecionar linha"></td>
+          <td class="td-id">#345678</td>
+          <td class="td-nome">Ana Souza</td>
+          <td class="td-curso">Design Gráfico</td>
+          <td>
+            <a href="#" class="cert-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+              </svg>
+              Ver
+            </a>
+          </td>
+          <td><span class="badge badge-aprovado">Aprovado</span></td>
+          <td>02/01/2026</td>
+        </tr>
+
+        <tr>
+          <td><input type="checkbox" class="linha-check" aria-label="Selecionar linha"></td>
+          <td class="td-id">#901234</td>
+          <td class="td-nome">Lucas Ferreira</td>
+          <td class="td-curso">Redes de Computadores</td>
+          <td>
+            <a href="#" class="cert-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+              </svg>
+              Ver
+            </a>
+          </td>
+          <td><span class="badge badge-avaliacao">Em avaliação</span></td>
+          <td>15/04/2026</td>
+        </tr>
+
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="7">Exibindo 5 de 5 registros</td>
+        </tr>
+      </tfoot>
     </table>
+  </div>
+
+  <!-- Conecte o historico.js aqui quando quiser ativar busca e exclusão -->
+  <!-- <script src="historico.js"></script> -->
 
 </body>
 </html>

@@ -1,15 +1,246 @@
-/* ── Upload ── */
+      :root {
+      --navy:         #1D3E73;
+      --navy-dark:    #162f57;
+      --orange:       #F08A01;
+      --orange-light: #F6AE4E;
+      --orange-pale:  #fef6e8;
+      --white:        #ffffff;
+      --gray-50:      #f8f9fb;
+      --gray-100:     #eef0f5;
+      --gray-200:     #d8dce8;
+      --gray-400:     #9aa0b4;
+      --text:         #1a2035;
+      --text-muted:   #6b7594;
+      --radius:       10px;
+      --radius-sm:    6px;
+      --transition:   0.15s ease;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', system-ui, sans-serif;
+      background: var(--gray-50);
+      color: var(--text);
+      font-size: 13px;
+      line-height: 1.5;
+      min-height: 100vh;
+      padding: 32px 28px 48px;
+    }
+
+    /* ── Cabeçalho ── */
+
+    .page-header { margin-bottom: 24px; }
+
+    .page-header h1 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+    }
+
+    .page-header p {
+      font-size: 12px;
+      color: var(--gray-400);
+      margin-top: 4px;
+    }
+
+    /* ── Grid ── */
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    /* ── Card ── */
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      padding: 22px 24px;
+    }
+
+    .card-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .card-title svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+    .card-title h2 {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .card-title h2.danger { color: #c62828; }
+
+    .card-desc {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+      line-height: 1.55;
+    }
+
+    /* ── Upload ── */
 
     .upload-area {
       border: 2px dashed var(--orange-light);
       border-radius: var(--radius);
-      padding: 36px 24px;
+      padding: 32px 20px;
       text-align: center;
       cursor: pointer;
       transition: background var(--transition), border-color var(--transition);
+      margin-bottom: 14px;
     }
 
     .upload-area:hover { background: var(--orange-pale); border-color: var(--orange); }
-    .upload-area i { font-size: 36px; color: var(--orange); display: block; margin-bottom: 10px; }
-    .upload-area p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
-    .upload-area span { color: var(--orange); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+
+    .upload-area svg {
+      width: 36px;
+      height: 36px;
+      margin: 0 auto 10px;
+      display: block;
+    }
+
+    .upload-area p {
+      font-size: 12.5px;
+      color: var(--text-muted);
+    }
+
+    .upload-area span {
+      color: var(--orange);
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .upload-hint {
+      font-size: 11px;
+      color: var(--gray-400);
+      margin-top: 6px;
+    }
+
+    input[type="file"] { display: none; }
+
+    /* ── Campos ── */
+
+    .field-label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 5px;
+    }
+
+    .req { color: var(--orange); }
+
+    select {
+      width: 100%;
+      padding: 9px 28px 9px 10px;
+      border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius-sm);
+      font-size: 12.5px;
+      font-family: inherit;
+      color: var(--text);
+      background-color: var(--white);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%239aa0b4' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      appearance: none;
+      outline: none;
+      cursor: pointer;
+      transition: border-color var(--transition), box-shadow var(--transition);
+      margin-bottom: 14px;
+    }
+
+    select:hover { border-color: var(--gray-400); }
+    select:focus {
+      border-color: var(--navy);
+      box-shadow: 0 0 0 3px rgba(29, 62, 115, 0.1);
+    }
+
+    textarea {
+      width: 100%;
+      padding: 9px 12px;
+      border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius-sm);
+      font-size: 12.5px;
+      font-family: inherit;
+      color: var(--text);
+      background: var(--white);
+      outline: none;
+      resize: vertical;
+      min-height: 88px;
+      line-height: 1.5;
+      transition: border-color var(--transition), box-shadow var(--transition);
+      margin-bottom: 16px;
+    }
+
+    textarea:hover { border-color: var(--gray-400); }
+    textarea:focus {
+      border-color: var(--navy);
+      box-shadow: 0 0 0 3px rgba(29, 62, 115, 0.1);
+    }
+
+    textarea::placeholder { color: var(--gray-400); }
+
+    /* ── Botões ── */
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      width: 100%;
+      padding: 9px 16px;
+      border-radius: var(--radius-sm);
+      font-size: 12.5px;
+      font-family: inherit;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1.5px solid transparent;
+      transition: all var(--transition);
+      letter-spacing: 0.01em;
+    }
+
+    .btn svg { width: 13px; height: 13px; }
+    .btn:active { transform: scale(0.98); }
+
+    .btn-primary { background: var(--navy); color: var(--white); border-color: var(--navy); margin-top: 4px; }
+    .btn-primary:hover { background: var(--navy-dark); border-color: var(--navy-dark); }
+
+    .btn-danger { background: #c62828; color: var(--white); border-color: #c62828; }
+    .btn-danger:hover { background: #b71c1c; border-color: #b71c1c; }
+
+    .btn-success { background: #2e7d32; color: var(--white); border-color: #2e7d32; }
+    .btn-success:hover { background: #1b5e20; border-color: #1b5e20; }
+
+    /* ── Divisor ── */
+
+    .divider {
+      height: 1px;
+      background: var(--gray-100);
+      margin: 18px 0;
+    }
+
+    .section-label {
+      font-size: 10.5px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--orange);
+      margin-bottom: 12px;
+    }
+
+    /* ── Responsivo ── */
+
+    @media (max-width: 700px) {
+      body { padding: 20px 14px 36px; }
+      .grid { grid-template-columns: 1fr; }
+    }
+ 

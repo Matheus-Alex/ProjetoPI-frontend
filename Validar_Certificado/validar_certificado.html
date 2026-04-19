@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <title>Validar Certificado</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <div class="page-header">
+    <h1>Validar Certificado</h1>
+    <p>Importe o arquivo e analise o certificado do aluno antes de aprovar ou recusar</p>
+  </div>
+
+  <div class="grid">
+
+    <!-- Card: Importar arquivo -->
+    <div class="card">
+      <div class="card-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#1D3E73" stroke-width="2">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="17 8 12 3 7 8"/>
+          <line x1="12" y1="3" x2="12" y2="15"/>
+        </svg>
+        <h2>Importar certificado</h2>
+      </div>
+      <p class="card-desc">Selecione ou arraste o arquivo do certificado para validação. Formatos aceitos: PDF, JPG, PNG.</p>
+
+      <div class="upload-area" id="upload-area">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#F08A01" stroke-width="1.5">
+          <path d="M4 16v1a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-1"/>
+          <polyline points="16 6 12 2 8 6"/>
+          <line x1="12" y1="2" x2="12" y2="14"/>
+        </svg>
+        <p>Arraste o arquivo aqui ou <span>clique para selecionar</span></p>
+        <p class="upload-hint">PDF, JPG ou PNG — máx. 10 MB</p>
+      </div>
+
+      <label for="file-input" class="visually-hidden">Selecione arquivo do certificado</label>
+      <input type="file" id="file-input" accept="application/pdf,image/jpeg,image/png" required>
+
+      <button class="btn btn-primary" id="btn-validar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 11l3 3L22 4"/>
+          <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+        </svg>
+        Validar certificado
+      </button>
+    </div>
+
+    <!-- Card: Recusar / Aprovar -->
+    <div class="card">
+      <div class="card-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#c62828" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="15" y1="9" x2="9" y2="15"/>
+          <line x1="9" y1="9" x2="15" y2="15"/>
+        </svg>
+        <h2 class="danger">Recusar certificado</h2>
+      </div>
+      <p class="card-desc">Selecione o motivo da recusa e adicione uma observação para o aluno.</p>
+
+      <label class="field-label" for="motivo-recusa">
+        Motivo da recusa <span class="req">*</span>
+      </label>
+      <select id="motivo-recusa" name="motivo-recusa" aria-label="Motivo para recusar certificado">
+        <option value="">Selecione um motivo...</option>
+        <option value="ilegivel">Documento ilegível</option>
+        <option value="incorreto">Informações incorretas</option>
+        <option value="regras">Não atende às regras do curso</option>
+        <option value="duplicado">Certificado duplicado</option>
+        <option value="outro">Outro</option>
+      </select>
+
+      <label class="field-label" for="obs-recusa">Observação para o aluno</label>
+      <textarea
+        id="obs-recusa"
+        name="obs-recusa"
+        placeholder="Descreva o motivo com mais detalhes para que o aluno possa corrigir e reenviar..."
+      ></textarea>
+
+      <button class="btn btn-danger" id="btn-recusar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="15" y1="9" x2="9" y2="15"/>
+          <line x1="9" y1="9" x2="15" y2="15"/>
+        </svg>
+        Confirmar recusa
+      </button>
+
+      <div class="divider"></div>
+
+      <div class="section-label">Ou, se estiver tudo certo</div>
+
+      <button class="btn btn-success" id="btn-aprovar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20 6L9 17l-5-5"/>
+        </svg>
+        Aprovar certificado
+      </button>
+    </div>
+
+  </div>
+
+  <script>
+    const uploadArea = document.getElementById('upload-area');
+    const fileInput  = document.getElementById('file-input');
+
+    uploadArea.addEventListener('click', () => fileInput.click());
+
+    uploadArea.addEventListener('dragover', e => {
+      e.preventDefault();
+      uploadArea.style.background = 'var(--orange-pale)';
+      uploadArea.style.borderColor = 'var(--orange)';
+    });
+
+    uploadArea.addEventListener('dragleave', () => {
+      uploadArea.style.background = '';
+      uploadArea.style.borderColor = '';
+    });
+
+    uploadArea.addEventListener('drop', e => {
+      e.preventDefault();
+      uploadArea.style.background = '';
+      uploadArea.style.borderColor = '';
+      const file = e.dataTransfer.files[0];
+      if (file) uploadArea.querySelector('p').textContent = 'Arquivo selecionado: ' + file.name;
+    });
+
+    fileInput.addEventListener('change', () => {
+      if (fileInput.files[0])
+        uploadArea.querySelector('p').textContent = 'Arquivo selecionado: ' + fileInput.files[0].name;
+    });
+
+    document.getElementById('btn-validar').addEventListener('click', () => {
+      if (!fileInput.files[0]) {
+        alert('Selecione um arquivo antes de validar.');
+        return;
+      }
+      alert('Certificado "' + fileInput.files[0].name + '" enviado para validação!');
+    });
+
+    document.getElementById('btn-recusar').addEventListener('click', () => {
+      const motivo = document.getElementById('motivo-recusa');
+      if (!motivo.value) {
+        alert('Selecione o motivo da recusa antes de continuar.');
+        motivo.focus();
+        return;
+      }
+      if (confirm('Confirmar recusa do certificado?')) {
+        alert('Certificado recusado. O aluno será notificado.');
+        motivo.value = '';
+        document.getElementById('obs-recusa').value = '';
+      }
+    });
+
+    document.getElementById('btn-aprovar').addEventListener('click', () => {
+      if (confirm('Confirmar aprovação do certificado?'))
+        alert('Certificado aprovado com sucesso!');
+    });
+  </script>
+
+</body>
+</html>

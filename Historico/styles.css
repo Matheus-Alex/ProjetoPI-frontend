@@ -1,0 +1,266 @@
+      :root {
+      --navy:         #1D3E73;
+      --navy-dark:    #162f57;
+      --orange:       #F08A01;
+      --orange-light: #F6AE4E;
+      --orange-pale:  #fef6e8;
+      --white:        #ffffff;
+      --gray-50:      #f8f9fb;
+      --gray-100:     #eef0f5;
+      --gray-200:     #d8dce8;
+      --gray-400:     #9aa0b4;
+      --text:         #1a2035;
+      --text-muted:   #6b7594;
+      --radius:       10px;
+      --radius-sm:    6px;
+      --transition:   0.15s ease;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', system-ui, sans-serif;
+      background: var(--gray-50);
+      color: var(--text);
+      font-size: 13px;
+      line-height: 1.5;
+      min-height: 100vh;
+      padding: 32px 28px 48px;
+    }
+
+    /* ── Cabeçalho ── */
+
+    .page-header { margin-bottom: 24px; }
+
+    .page-header h1 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+    }
+
+    .page-header h2 {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-top: 3px;
+    }
+
+    .page-header p {
+      font-size: 12px;
+      color: var(--gray-400);
+      margin-top: 4px;
+    }
+
+    /* ── Toolbar ── */
+
+    .toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .search-wrap {
+      position: relative;
+      flex: 1;
+      max-width: 340px;
+    }
+
+    .search-wrap svg {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 15px;
+      height: 15px;
+      stroke: var(--gray-400);
+      pointer-events: none;
+      flex-shrink: 0;
+    }
+
+    .search-wrap input {
+      width: 100%;
+      padding: 9px 12px 9px 34px;
+      border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius-sm);
+      font-size: 12.5px;
+      font-family: inherit;
+      color: var(--text);
+      background: var(--white);
+      outline: none;
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+
+    .search-wrap input::placeholder { color: var(--gray-400); }
+    .search-wrap input:hover { border-color: var(--gray-400); }
+    .search-wrap input:focus {
+      border-color: var(--navy);
+      box-shadow: 0 0 0 3px rgba(29, 62, 115, 0.1);
+    }
+
+    .toolbar-right { display: flex; align-items: center; gap: 12px; }
+
+    .select-all-wrap {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--text-muted);
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    .select-all-wrap input[type="checkbox"] {
+      accent-color: var(--orange);
+      width: 14px;
+      height: 14px;
+      cursor: pointer;
+    }
+
+    .btn-excluir {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid #fca5a5;
+      background: #fff5f5;
+      color: #c62828;
+      font-size: 12px;
+      font-family: inherit;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background var(--transition), border-color var(--transition);
+    }
+
+    .btn-excluir:hover { background: #fdecea; border-color: #e53e3e; }
+    .btn-excluir:active { transform: scale(0.98); }
+    .btn-excluir svg { width: 13px; height: 13px; }
+
+    /* ── Card ── */
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .total-bar {
+      padding: 10px 16px;
+      font-size: 11.5px;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--gray-100);
+      background: var(--gray-50);
+    }
+
+    .total-bar strong { color: var(--navy); font-weight: 600; }
+
+    /* ── Tabela ── */
+
+    table { width: 100%; border-collapse: collapse; }
+
+    thead th {
+      padding: 10px 14px;
+      text-align: left;
+      font-size: 10.5px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--text-muted);
+      border-bottom: 1.5px solid var(--gray-200);
+      background: var(--gray-50);
+      white-space: nowrap;
+    }
+
+    thead th:first-child,
+    tbody td:first-child { width: 40px; text-align: center; }
+
+    tbody tr {
+      border-bottom: 1px solid var(--gray-100);
+      transition: background var(--transition);
+    }
+
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:hover { background: var(--orange-pale); }
+
+    td {
+      padding: 12px 14px;
+      font-size: 12.5px;
+      vertical-align: middle;
+    }
+
+    .td-id {
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+      color: var(--navy);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .td-nome { font-weight: 500; color: var(--text); }
+    .td-curso { color: var(--text-muted); }
+
+    .cert-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: rgba(29, 62, 115, 0.08);
+      color: var(--navy);
+      font-size: 11.5px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background var(--transition);
+    }
+
+    .cert-link:hover { background: rgba(29, 62, 115, 0.16); }
+    .cert-link svg { width: 11px; height: 11px; }
+
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .badge-aprovado  { background: #e8f5e9; color: #2e7d32; }
+    .badge-avaliacao { background: var(--orange-pale); color: var(--orange); }
+    .badge-rejeitado { background: #fdecea; color: #c62828; }
+
+    td input[type="checkbox"] {
+      accent-color: var(--orange);
+      width: 14px;
+      height: 14px;
+      cursor: pointer;
+    }
+
+    tfoot td {
+      padding: 10px 14px;
+      font-size: 11.5px;
+      color: var(--text-muted);
+      border-top: 1.5px solid var(--gray-200);
+      background: var(--gray-50);
+    }
+
+    /* ── Responsivo ── */
+
+    @media (max-width: 700px) {
+      body { padding: 20px 14px 36px; }
+
+      .toolbar { flex-direction: column; align-items: stretch; }
+      .search-wrap { max-width: 100%; }
+      .toolbar-right { justify-content: space-between; }
+
+      thead th:nth-child(4),
+      tbody td:nth-child(4) { display: none; }
+    }

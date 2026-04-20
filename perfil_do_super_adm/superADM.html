@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  
+  <title>Super Admin</title>
+  
+</head>
+<body>
+
+<div class="dash">
+
+  <!-- ── Sidebar ── -->
+  <aside class="sidebar">
+    <div class="sb-profile">
+      <div class="sb-avatar-wrap">
+        <div class="avatar">SA</div>
+        <div class="sb-profile-info">
+          <p class="name">Super Admin</p>
+          <p class="role">Administrador</p>
+        </div>
+      </div>
+      <span class="badge-super">Super Admin</span>
+    </div>
+
+    <div class="sb-menu-icon"><span></span><span></span><span></span></div>
+
+    <nav class="sb-nav">
+
+      <div class="sb-section">Geral</div>
+
+      <div class="sb-item active" data-tab="dashboard">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        Dashboard
+      </div>
+
+      <div class="sb-item" data-tab="historico">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        Histórico
+      </div>
+
+      <div class="sb-item" data-tab="validar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        Validar Cert.
+      </div>
+
+      <div class="sb-section">Exclusivo</div>
+
+      <div class="sb-item exclusive" data-tab="criar-curso">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        Criar curso
+      </div>
+
+      <div class="sb-item exclusive" data-tab="criar-coord">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+        Novo coordenador
+      </div>
+
+      <div class="sb-item exclusive" data-tab="gerenciar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Gerenciar usuários
+      </div>
+
+      <div class="sb-section">Sistema</div>
+
+      <div class="sb-item exclusive" data-tab="config">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        Configurações
+      </div>
+
+    </nav>
+
+    <div class="sb-footer">
+      <div class="sb-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        Sair
+      </div>
+    </div>
+  </aside>
+
+  <!-- ── Main ── -->
+  <main class="main">
+
+    <div class="top-bar">
+      <div class="search-wrap">
+        <input type="text" placeholder="Pesquisar...">
+      </div>
+    </div>
+
+    <!-- ── Dashboard ── -->
+    <div class="tab-panel active" id="tab-dashboard">
+      <div class="panel-header">
+        <h1>Dashboard</h1>
+        <p>Visão geral completa do sistema</p>
+      </div>
+
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="stat-label">Total de alunos</div>
+          <div class="stat-value">1.284</div>
+          <div class="stat-sub">+8,3% vs. mês anterior</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Coordenadores ativos</div>
+          <div class="stat-value">12</div>
+          <div class="stat-sub">2 adicionados este mês</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Cursos cadastrados</div>
+          <div class="stat-value">34</div>
+          <div class="stat-sub">+3 novos cursos</div>
+        </div>
+      </div>
+
+      <div class="card card-overflow">
+        <table>
+          <thead>
+            <tr><th>Matrícula</th><th>Aluno</th><th>Curso</th><th>Status</th><th>Data</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="td-id">#123456</td><td class="td-name">João Silva</td><td class="td-muted">Engenharia de Software</td><td><span class="badge badge-ativo">Aprovado</span></td><td class="td-muted">26/05/2027</td></tr>
+            <tr><td class="td-id">#654321</td><td class="td-name">Maria Oliveira</td><td class="td-muted">Ciência da Computação</td><td><span class="badge badge-coord">Em avaliação</span></td><td class="td-muted">26/05/2026</td></tr>
+            <tr><td class="td-id">#789012</td><td class="td-name">Carlos Mendes</td><td class="td-muted">Administração</td><td><span class="badge badge-inativo">Rejeitado</span></td><td class="td-muted">10/03/2026</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ── Histórico ── -->
+    <div class="tab-panel" id="tab-historico">
+      <div class="panel-header">
+        <h1>Histórico</h1>
+        <p>Registro completo de atividades do sistema</p>
+      </div>
+      <div class="card card-overflow">
+        <table>
+          <thead>
+            <tr><th>Matrícula</th><th>Aluno</th><th>Curso</th><th>Certificado</th><th>Status</th><th>Data</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="td-id">#123456</td><td class="td-name">João Silva</td><td class="td-muted">Engenharia de Software</td><td><a href="#" style="color:var(--navy);font-weight:600;font-size:11.5px;">Ver</a></td><td><span class="badge badge-ativo">Aprovado</span></td><td class="td-muted">26/05/2027</td></tr>
+            <tr><td class="td-id">#654321</td><td class="td-name">Maria Oliveira</td><td class="td-muted">Ciência da Computação</td><td><a href="#" style="color:var(--navy);font-weight:600;font-size:11.5px;">Ver</a></td><td><span class="badge badge-coord">Em avaliação</span></td><td class="td-muted">26/05/2026</td></tr>
+            <tr><td class="td-id">#789012</td><td class="td-name">Carlos Mendes</td><td class="td-muted">Administração</td><td><a href="#" style="color:var(--navy);font-weight:600;font-size:11.5px;">Ver</a></td><td><span class="badge badge-inativo">Rejeitado</span></td><td class="td-muted">10/03/2026</td></tr>
+            <tr><td class="td-id">#345678</td><td class="td-name">Ana Souza</td><td class="td-muted">Design Gráfico</td><td><a href="#" style="color:var(--navy);font-weight:600;font-size:11.5px;">Ver</a></td><td><span class="badge badge-ativo">Aprovado</span></td><td class="td-muted">02/01/2026</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ── Validar ── -->
+    <div class="tab-panel" id="tab-validar">
+      <div class="panel-header">
+        <h1>Validar Certificado</h1>
+        <p>Analise e aprove ou recuse certificados pendentes</p>
+      </div>
+      <div class="card card-overflow">
+        <table>
+          <thead>
+            <tr><th>Aluno</th><th>Curso</th><th>Enviado em</th><th>Ações</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="td-name">Maria Oliveira</td>
+              <td class="td-muted">Ciência da Computação</td>
+              <td class="td-muted">26/05/2026</td>
+              <td style="display:flex;gap:6px;padding:10px 16px;">
+                <button class="btn btn-primary" style="padding:5px 12px;font-size:11px;">Aprovar</button>
+                <button class="btn btn-danger" style="padding:5px 12px;font-size:11px;">Recusar</button>
+              </td>
+            </tr>
+            <tr>
+              <td class="td-name">Lucas Ferreira</td>
+              <td class="td-muted">Redes de Computadores</td>
+              <td class="td-muted">15/04/2026</td>
+              <td style="display:flex;gap:6px;padding:10px 16px;">
+                <button class="btn btn-primary" style="padding:5px 12px;font-size:11px;">Aprovar</button>
+                <button class="btn btn-danger" style="padding:5px 12px;font-size:11px;">Recusar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ── Criar curso ── -->
+    <div class="tab-panel" id="tab-criar-curso">
+      <div class="panel-header">
+        <h1>Criar curso <span class="excl-tag">★ Exclusivo</span></h1>
+        <p>Cadastre um novo curso na plataforma</p>
+      </div>
+
+      <div class="card">
+        <div class="form-group">
+          <label class="field-label" for="nome-curso">Nome do curso <span class="req">*</span></label>
+          <input type="text" id="nome-curso" placeholder="Ex: Engenharia de Software">
+        </div>
+
+        <div class="form-grid">
+          <div>
+            <label class="field-label" for="carga">Carga horária <span class="req">*</span></label>
+            <input type="text" id="carga" placeholder="Ex: 120h">
+          </div>
+          <div>
+            <label class="field-label" for="modalidade">Modalidade</label>
+            <select id="modalidade">
+              <option value="">Selecione...</option>
+              <option>Presencial</option>
+              <option>EaD</option>
+              <option>Híbrido</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="field-label" for="area">Área do conhecimento</label>
+          <select id="area">
+            <option value="">Selecione...</option>
+            <option>Tecnologia da Informação</option>
+            <option>Administração</option>
+            <option>Saúde</option>
+            <option>Engenharia</option>
+            <option>Design</option>
+            <option>Outro</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="field-label" for="desc-curso">Descrição</label>
+          <textarea id="desc-curso" placeholder="Breve descrição do curso..."></textarea>
+        </div>
+
+        <div class="btn-row">
+          <button class="btn btn-ghost">Limpar</button>
+          <button class="btn btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Criar curso
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Criar coordenador ── -->
+    <div class="tab-panel" id="tab-criar-coord">
+      <div class="panel-header">
+        <h1>Novo coordenador <span class="excl-tag">★ Exclusivo</span></h1>
+        <p>Cadastre um novo coordenador no sistema</p>
+      </div>
+
+      <div class="card">
+        <div class="form-grid">
+          <div>
+            <label class="field-label" for="coord-nome">Nome <span class="req">*</span></label>
+            <input type="text" id="coord-nome" placeholder="Nome completo">
+          </div>
+          <div>
+            <label class="field-label" for="coord-email">E-mail <span class="req">*</span></label>
+            <input type="email" id="coord-email" placeholder="coordenador@email.com">
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div>
+            <label class="field-label" for="coord-senha">Senha provisória <span class="req">*</span></label>
+            <input type="password" id="coord-senha" placeholder="Mínimo 8 caracteres">
+          </div>
+          <div>
+            <label class="field-label" for="coord-nivel">Nível de acesso</label>
+            <select id="coord-nivel">
+              <option value="">Selecione...</option>
+              <option>Coordenador padrão</option>
+              <option>Coordenador sênior</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="field-label" for="coord-curso">Curso vinculado</label>
+          <select id="coord-curso">
+            <option value="">Selecione o curso...</option>
+            <option>Engenharia de Software</option>
+            <option>Ciência da Computação</option>
+            <option>Administração</option>
+            <option>Design Gráfico</option>
+          </select>
+        </div>
+
+        <div class="btn-row">
+          <button class="btn btn-ghost">Limpar</button>
+          <button class="btn btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+            Cadastrar coordenador
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Gerenciar usuários ── -->
+    <div class="tab-panel" id="tab-gerenciar">
+      <div class="panel-header">
+        <h1>Gerenciar usuários <span class="excl-tag">★ Exclusivo</span></h1>
+        <p>Visualize e gerencie todos os usuários da plataforma</p>
+      </div>
+
+      <div class="card card-overflow">
+        <table>
+          <thead>
+            <tr><th>Nome</th><th>E-mail</th><th>Tipo</th><th>Status</th><th>Ação</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="td-name">Aurora L.</td>
+              <td class="td-muted">aurora@email.com</td>
+              <td><span class="badge badge-coord">Coordenador</span></td>
+              <td><span class="badge badge-ativo">Ativo</span></td>
+              <td><button class="btn btn-ghost" style="padding:4px 10px;font-size:11px;">Editar</button></td>
+            </tr>
+            <tr>
+              <td class="td-name">João Silva</td>
+              <td class="td-muted">joao@email.com</td>
+              <td><span class="badge badge-admin">Aluno</span></td>
+              <td><span class="badge badge-ativo">Ativo</span></td>
+              <td><button class="btn btn-ghost" style="padding:4px 10px;font-size:11px;">Editar</button></td>
+            </tr>
+            <tr>
+              <td class="td-name">Maria Oliveira</td>
+              <td class="td-muted">maria@email.com</td>
+              <td><span class="badge badge-admin">Aluno</span></td>
+              <td><span class="badge badge-inativo">Inativo</span></td>
+              <td><button class="btn btn-ghost" style="padding:4px 10px;font-size:11px;">Editar</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ── Configurações ── -->
+    <div class="tab-panel" id="tab-config">
+      <div class="panel-header">
+        <h1>Configurações <span class="excl-tag">★ Exclusivo</span></h1>
+        <p>Configurações globais do sistema — apenas super administradores</p>
+      </div>
+
+      <div class="card">
+        <div class="card-row">
+          <div class="card-info">
+            <h3>Modo de manutenção</h3>
+            <p>Ativa o modo de manutenção para todos os usuários do sistema</p>
+          </div>
+          <label class="toggle"><input type="checkbox"><span class="toggle-slider"></span></label>
+        </div>
+        <div class="card-row">
+          <div class="card-info">
+            <h3>Registro aberto de alunos</h3>
+            <p>Permite que novos alunos se cadastrem sem convite</p>
+          </div>
+          <label class="toggle"><input type="checkbox" checked="checked"><span class="toggle-slider"></span></label>
+        </div>
+        <div class="card-row">
+          <div class="card-info">
+            <h3>Validação automática de certificados</h3>
+            <p>Aprova automaticamente certificados que atendam todos os critérios</p>
+          </div>
+          <label class="toggle"><input type="checkbox"><span class="toggle-slider"></span></label>
+        </div>
+        <div class="card-row">
+          <div class="card-info">
+            <h3>Notificações por e-mail globais</h3>
+            <p>Envia notificações para todos os usuários sobre atualizações do sistema</p>
+          </div>
+          <label class="toggle"><input type="checkbox" checked="checked"><span class="toggle-slider"></span></label>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="card">
+        <div class="card-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c62828" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <h2 style="color:#c62828;">Zona de perigo</h2>
+        </div>
+        <p class="card-desc">Ações irreversíveis. Tenha certeza antes de prosseguir.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <button class="btn btn-danger" style="width:auto;">Resetar todos os dados</button>
+          <button class="btn btn-ghost" style="width:auto;">Exportar backup</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script>
+  document.querySelectorAll('.sb-item[data-tab]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.sb-item').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>

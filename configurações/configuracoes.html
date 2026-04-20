@@ -9,320 +9,140 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<div class="dash">
 
-  <div class="text-input">
-    <input type="text" placeholder="Pesquisar configurações">
-  </div>
-  <div class="settings-wrapper">
-
-    <aside class="sidebar">
-      <div class="sidebar-header">
-        <i class='bx bxs-cog'></i>
-        <span>Configuração</span>
+  <aside class="sidebar">
+    <div class="sb-profile">
+      <div class="avatar">AL</div>
+      <div class="sb-profile-info"><p class="name">Aurora L.</p><p class="role">Coordenador</p></div>
+    </div>
+    <div class="sb-menu-icon"><span></span><span></span><span></span></div>
+    <nav class="sb-nav">
+      <a href="daskboard.html" class="sb-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Dashboard
+      </a>
+      <a href="cadastro.html" class="sb-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Cadastro
+      </a>
+      <a href="validar_certificado.html" class="sb-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>Validar Certificados
+      </a>
+      <a href="historico.html" class="sb-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Histórico
+      </a>
+      <a href="perfil.html" class="sb-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Inf. do Aluno
+      </a>
+    </nav>
+    <div class="sb-footer">
+      <div class="sb-item active">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>Configurações
       </div>
+    </div>
+  </aside>
 
-      <nav class="sidebar-nav">
-        <button class="nav-item active" data-tab="preferencias">
-          <i class='bx bxs-palette'></i>
-          <span>Preferência</span>
-        </button>
-        <button class="nav-item" data-tab="notificacoes">
-          <i class='bx bxs-bell'></i>
-          <span>Notificação</span>
-        </button>
-        <div class="nav-section-label">Personalização</div>
-        <button class="nav-item" data-tab="geral">
-          <i class='bx bxs-home'></i>
-          <span>Geral</span>
-        </button>
-        <button class="nav-item" data-tab="professores">
-          <i class='bx bxs-user-badge'></i>
-          <span>Professores</span>
-        </button>
-        <button class="nav-item" data-tab="importacoes">
-          <i class='bx bx-download'></i>
-          <span>Importações</span>
-        </button>
-      </nav>
+  <main class="main">
 
-      <div class="sidebar-footer">
-        <button class="btn-sair">
-          <i class='bx bx-log-out'></i>
-          <span>Sair da conta</span>
-        </button>
-        <button class="btn-salvar" id="btn-salvar">
-          <i class='bx bx-check'></i>
-          Salvar mudanças
-        </button>
+    <div class="top-bar">
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#9aa0b4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" placeholder="Pesquisar configurações...">
       </div>
-    </aside>
+    </div>
 
-    <main class="content">
+    <div class="settings-wrapper">
+      <aside class="sidebar-settings">
+        <div class="sidebar-header">
+          <i class='bx bxs-cog'></i>
+          <span>Configuração</span>
+        </div>
+        <nav class="sidebar-nav">
+          <button class="nav-item active" data-tab="preferencias"><i class='bx bxs-palette'></i><span>Preferência</span></button>
+          <button class="nav-item" data-tab="notificacoes"><i class='bx bxs-bell'></i><span>Notificação</span></button>
+          <div class="nav-section-label">Personalização</div>
+          <button class="nav-item" data-tab="geral"><i class='bx bxs-home'></i><span>Geral</span></button>
+          <button class="nav-item" data-tab="professores"><i class='bx bxs-user-badge'></i><span>Professores</span></button>
+          <button class="nav-item" data-tab="importacoes"><i class='bx bx-download'></i><span>Importações</span></button>
+        </nav>
+        <div class="sidebar-footer">
+          <button class="btn-sair"><i class='bx bx-log-out'></i><span>Sair da conta</span></button>
+          <button class="btn-salvar-cfg"><i class='bx bx-check'></i>Salvar mudanças</button>
+        </div>
+      </aside>
 
-      <button class="btn-fechar" onclick="window.history.back()">✕</button>
+      <div class="content-settings">
 
-      <!-- Preferências -->
-      <section class="tab-panel active" id="tab-preferencias">
-        <div class="panel-header"><h2>Preferência</h2></div>
+        <section class="tab-panel active" id="tab-preferencias">
+          <div class="panel-header"><h2>Preferência</h2></div>
+          <div class="card-cfg"><div class="card-row"><div class="card-info"><h3>Aparência</h3><p>Personalize a aparência do seu dispositivo caso tenha alguma dificuldade de visualização.</p></div><select id="tema"><option value="padrao">Padrão</option><option value="escuro">Escuro</option><option value="claro">Claro</option></select></div></div>
+          <div class="section-label" style="margin:16px 0 10px">Privacidade</div>
+          <div class="card-cfg"><div class="card-row"><div class="card-info"><h3>Mostrar meu histórico de visualizações</h3><p>As pessoas com acesso total ou de edição poderão ver quando você visualizou uma página.</p></div><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label></div></div>
+          <div class="card-cfg"><div class="card-row"><div class="card-info"><h3>Descoberta do perfil</h3><p>Os usuários que têm seu e-mail podem ver seu nome e foto de perfil quando convidam você.</p></div><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label></div></div>
+        </section>
 
-        <div class="card">
-          <div class="card-row">
-            <div class="card-info">
-              <h3>Aparência</h3>
-              <p>Personalize a aparência do seu dispositivo caso tenha alguma dificuldade de visualização.</p>
+        <section class="tab-panel" id="tab-notificacoes">
+          <div class="panel-header"><h2>Notificação</h2></div>
+          <div class="card-cfg"><div class="card-row"><div class="card-info"><h3>Notificações por e-mail</h3><p>Receba atualizações e avisos no seu e-mail.</p></div><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label></div></div>
+          <div class="card-cfg"><div class="card-row"><div class="card-info"><h3>Notificações do sistema</h3><p>Exibir notificações em tempo real dentro da plataforma.</p></div><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label></div></div>
+          <div class="card-cfg"><div class="card-row"><div class="card-info"><h3>Frequência de resumo</h3><p>Com que frequência deseja receber o resumo de atividades.</p></div><select id="frequencia"><option value="diario">Diário</option><option value="semanal" selected>Semanal</option><option value="mensal">Mensal</option><option value="nunca">Nunca</option></select></div></div>
+        </section>
+
+        <section class="tab-panel" id="tab-geral">
+          <div class="panel-header"><h2>Geral</h2></div>
+          <div class="card-cfg"><div class="card-row"><div class="card-info"><h3>Tamanho da fonte</h3><p>Ajuste o tamanho do texto para melhor leitura.</p></div><select id="fonte"><option value="pequena">Pequena</option><option value="media" selected>Média</option><option value="grande">Grande</option></select></div></div>
+          <div class="card-cfg"><div class="card-row"><div class="card-info"><h3>Idioma</h3><p>Selecione o idioma de exibição do sistema.</p></div><select id="idioma"><option value="pt-br">Português (BR)</option><option value="en">English</option><option value="es">Español</option></select></div></div>
+          <div class="card-cfg"><div class="card-row"><div class="card-info"><h3>Confirmação de exclusão</h3><p>Exibir confirmação antes de excluir qualquer item.</p></div><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label></div></div>
+        </section>
+
+        <section class="tab-panel" id="tab-professores">
+          <div class="panel-header"><h2>Professores</h2></div>
+          <div class="card-cfg"><div class="card-row"><div class="card-info"><h3>Acesso ao histórico de alunos</h3><p>Permitir que professores visualizem o histórico de atividades dos alunos.</p></div><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label></div></div>
+          <div class="card-cfg"><div class="card-row"><div class="card-info"><h3>Edição de conteúdo</h3><p>Permitir que professores editem materiais e conteúdos do curso.</p></div><label class="toggle"><input type="checkbox"><span class="toggle-slider"></span></label></div></div>
+          <div class="card-cfg"><div class="card-row"><div class="card-info"><h3>Nível de permissão padrão</h3><p>Defina o nível de acesso padrão para novos professores.</p></div><select id="permissao"><option value="visualizacao">Visualização</option><option value="edicao" selected>Edição</option><option value="total">Acesso total</option></select></div></div>
+        </section>
+
+        <section class="tab-panel" id="tab-importacoes">
+          <div class="panel-header"><h2>Importações</h2></div>
+          <div class="card-cfg"><div class="card-row"><div class="card-info"><h3>Formato padrão</h3><p>Escolha o formato padrão para importação de arquivos.</p></div><select id="formato"><option value="csv">CSV</option><option value="xlsx">XLSX</option><option value="json">JSON</option></select></div></div>
+          <div class="card-cfg"><div class="card-row"><div class="card-info"><h3>Validação automática</h3><p>Validar automaticamente os dados ao importar um arquivo.</p></div><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label></div></div>
+          <div class="card-cfg">
+            <div class="upload-area-cfg" id="upload-area">
+              <i class='bx bx-cloud-upload'></i>
+              <p>Arraste um arquivo aqui ou <span>clique para selecionar</span></p>
+              <input type="file" id="file-input" style="display:none">
             </div>
-            <select id="tema" name="tema">
-              <option value="padrao">Padrão</option>
-              <option value="escuro">Escuro</option>
-              <option value="claro">Claro</option>
-            </select>
           </div>
-        </div>
+        </section>
 
-        <div class="section-title">Privacidade</div>
+      </div>
+    </div>
+  </main>
+</div>
 
-        <div class="card">
-          <div class="card-row">
-            <div class="card-info">
-              <h3>Mostrar meu histórico de visualizações</h3>
-              <p>As pessoas com acesso total ou de edição poderão ver quando você visualizou uma página.</p>
-            </div>
-            <label class="toggle">
-              <input type="checkbox" id="historico" checked>
-              <span class="toggle-slider"></span>
-            </label>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-row">
-            <div class="card-info">
-              <h3>Descoberta do perfil</h3>
-              <p>Os usuários que têm seu e-mail podem ver seu nome e foto de perfil quando convidam você para um novo espaço de trabalho.</p>
-            </div>
-            <label class="toggle">
-              <input type="checkbox" id="perfil" checked>
-              <span class="toggle-slider"></span>
-            </label>
-          </div>
-        </div>
-      </section>
-
-      <!-- Notificações -->
-      <section class="tab-panel" id="tab-notificacoes">
-        <div class="panel-header"><h2>Notificação</h2></div>
-
-        <div class="card">
-          <div class="card-row">
-            <div class="card-info">
-              <h3>Notificações por e-mail</h3>
-              <p>Receba atualizações e avisos no seu e-mail.</p>
-            </div>
-            <label class="toggle">
-              <input type="checkbox" id="notif-email" checked>
-              <span class="toggle-slider"></span>
-            </label>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-row">
-            <div class="card-info">
-              <h3>Notificações do sistema</h3>
-              <p>Exibir notificações em tempo real dentro da plataforma.</p>
-            </div>
-            <label class="toggle">
-              <input type="checkbox" id="notif-sistema" checked>
-              <span class="toggle-slider"></span>
-            </label>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-row">
-            <div class="card-info">
-              <h3>Frequência de resumo</h3>
-              <p>Com que frequência deseja receber o resumo de atividades.</p>
-            </div>
-            <select id="frequencia" name="frequencia">
-              <option value="diario">Diário</option>
-              <option value="semanal" selected>Semanal</option>
-              <option value="mensal">Mensal</option>
-              <option value="nunca">Nunca</option>
-            </select>
-          </div>
-        </div>
-      </section>
-
-      <!-- Geral -->
-      <section class="tab-panel" id="tab-geral">
-        <div class="panel-header"><h2>Geral</h2></div>
-
-        <div class="card">
-          <div class="card-row">
-            <div class="card-info">
-              <h3>Tamanho da fonte</h3>
-              <p>Ajuste o tamanho do texto para melhor leitura.</p>
-            </div>
-            <select id="fonte" name="fonte">
-              <option value="pequena">Pequena</option>
-              <option value="media" selected>Média</option>
-              <option value="grande">Grande</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-row">
-            <div class="card-info">
-              <h3>Idioma</h3>
-              <p>Selecione o idioma de exibição do sistema.</p>
-            </div>
-            <select id="idioma" name="idioma">
-              <option value="pt-br">Português (BR)</option>
-              <option value="en">English</option>
-              <option value="es">Español</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-row">
-            <div class="card-info">
-              <h3>Confirmação de exclusão</h3>
-              <p>Exibir confirmação antes de excluir qualquer item.</p>
-            </div>
-            <label class="toggle">
-              <input type="checkbox" id="confirmacao" checked>
-              <span class="toggle-slider"></span>
-            </label>
-          </div>
-        </div>
-      </section>
-
-      <!-- Professores -->
-      <section class="tab-panel" id="tab-professores">
-        <div class="panel-header"><h2>Professores</h2></div>
-
-        <div class="card">
-          <div class="card-row">
-            <div class="card-info">
-              <h3>Acesso ao histórico de alunos</h3>
-              <p>Permitir que professores visualizem o histórico de atividades dos alunos.</p>
-            </div>
-            <label class="toggle">
-              <input type="checkbox" id="prof-historico" checked>
-              <span class="toggle-slider"></span>
-            </label>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-row">
-            <div class="card-info">
-              <h3>Edição de conteúdo</h3>
-              <p>Permitir que professores editem materiais e conteúdos do curso.</p>
-            </div>
-            <label class="toggle">
-              <input type="checkbox" id="prof-edicao">
-              <span class="toggle-slider"></span>
-            </label>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-row">
-            <div class="card-info">
-              <h3>Nível de permissão padrão</h3>
-              <p>Defina o nível de acesso padrão para novos professores.</p>
-            </div>
-            <select id="permissao" name="permissao">
-              <option value="visualizacao">Visualização</option>
-              <option value="edicao" selected>Edição</option>
-              <option value="total">Acesso total</option>
-            </select>
-          </div>
-        </div>
-      </section>
-
-      <!-- Importações -->
-      <section class="tab-panel" id="tab-importacoes">
-        <div class="panel-header"><h2>Importações</h2></div>
-
-        <div class="card">
-          <div class="card-row">
-            <div class="card-info">
-              <h3>Formato padrão</h3>
-              <p>Escolha o formato padrão para importação de arquivos.</p>
-            </div>
-            <select id="formato" name="formato">
-              <option value="csv">CSV</option>
-              <option value="xlsx">XLSX</option>
-              <option value="json">JSON</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-row">
-            <div class="card-info">
-              <h3>Validação automática</h3>
-              <p>Validar automaticamente os dados ao importar um arquivo.</p>
-            </div>
-            <label class="toggle">
-              <input type="checkbox" id="validacao" checked>
-              <span class="toggle-slider"></span>
-            </label>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="upload-area" id="upload-area">
-            <i class='bx bx-cloud-upload'></i>
-            <p>Arraste um arquivo aqui ou <span>clique para selecionar</span></p>
-            <input type="file" id="file-input" style="display: none;">
-          </div>
-        </div>
-      </section>
-
-    </main>
-  </div>
-
-  <script>
-    document.querySelectorAll('.nav-item[data-tab]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
-        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-        btn.classList.add('active');
-        document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
-      });
+<script>
+  document.querySelectorAll('.nav-item[data-tab]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
     });
+  });
 
-    const uploadArea = document.getElementById('upload-area');
-    const fileInput = document.getElementById('file-input');
+  const uploadArea = document.getElementById('upload-area');
+  const fileInput = document.getElementById('file-input');
 
-    uploadArea.addEventListener('click', () => fileInput.click());
-
-    uploadArea.addEventListener('dragover', e => {
-      e.preventDefault();
-      uploadArea.style.background = 'var(--orange-pale)';
-    });
-
-    uploadArea.addEventListener('dragleave', () => {
-      uploadArea.style.background = '';
-    });
-
-    uploadArea.addEventListener('drop', e => {
-      e.preventDefault();
-      uploadArea.style.background = '';
-      const file = e.dataTransfer.files[0];
-      if (file) uploadArea.querySelector('p').textContent = 'Arquivo selecionado: ' + file.name;
-    });
-
-    fileInput.addEventListener('change', () => {
-      if (fileInput.files[0]) uploadArea.querySelector('p').textContent = 'Arquivo selecionado: ' + fileInput.files[0].name;
-    });
-  </script>
-
+  uploadArea.addEventListener('click', () => fileInput.click());
+  uploadArea.addEventListener('dragover', e => { e.preventDefault(); uploadArea.style.background = 'var(--orange-pale)'; });
+  uploadArea.addEventListener('dragleave', () => { uploadArea.style.background = ''; });
+  uploadArea.addEventListener('drop', e => {
+    e.preventDefault(); uploadArea.style.background = '';
+    const file = e.dataTransfer.files[0];
+    if (file) uploadArea.querySelector('p').textContent = 'Arquivo selecionado: ' + file.name;
+  });
+  fileInput.addEventListener('change', () => {
+    if (fileInput.files[0]) uploadArea.querySelector('p').textContent = 'Arquivo selecionado: ' + fileInput.files[0].name;
+  });
+</script>
 </body>
 </html>

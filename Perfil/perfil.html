@@ -3,49 +3,86 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <title>Perfil</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<div class="dash">
 
-  <div class="container-perfil">
-    <h1>Meu Perfil</h1>
-    
-    <div class="profile-section">
-      <div class="avatar-large"></div>
-      <h2>Informações Pessoais</h2>
-      
-      <form class="profile-form">
-        <div class="form-group">
-          <label for="nome">Nome completo</label>
-          <input type="text" id="nome" name="nome" placeholder="Seu nome">
-        </div>
+  <aside class="sidebar">
+    <div class="sb-profile">
+      <div class="avatar">AL</div>
+      <div class="sb-profile-info"><p class="name">Aurora L.</p><p class="role">Coordenador</p></div>
+    </div>
+    <div class="sb-menu-icon"><span></span><span></span><span></span></div>
+    <nav class="sb-nav">
+      <a href="daskboard.html" class="sb-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Dashboard
+      </a>
+      <a href="cadastro.html" class="sb-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Cadastro
+      </a>
+      <a href="validar_certificado.html" class="sb-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>Validar Certificados
+      </a>
+      <a href="historico.html" class="sb-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Histórico
+      </a>
+      <div class="sb-item active">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Inf. do Aluno
+      </div>
+    </nav>
+    <div class="sb-footer">
+      <a href="configuracoes.html" class="sb-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>Configurações
+      </a>
+    </div>
+  </aside>
 
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="seu@email.com">
-        </div>
-
-        <div class="form-group">
-          <label for="telefone">Telefone</label>
-          <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX">
-        </div>
-
-        <div class="form-group">
-          <label for="data-nascimento">Data de nascimento</label>
-          <input type="date" id="data-nascimento" name="data-nascimento">
-        </div>
-
-        <button type="submit" class="btn-salvar">Salvar alterações</button>
-      </form>
+  <main class="main">
+    <div class="top-bar">
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#9aa0b4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" placeholder="Pesquisar...">
+      </div>
     </div>
 
-    <div class="security-section">
+    <div class="page-header">
+      <h1>Informações do Aluno</h1>
+      <p>Gerencie os dados e configurações do perfil</p>
+    </div>
+
+    <div class="profile-card">
+      <h2>Informações Pessoais</h2>
+      <div class="avatar-large">AL</div>
+
+      <div class="form-group">
+        <label for="nome">Nome completo</label>
+        <input type="text" id="nome" name="nome" placeholder="Seu nome completo">
+      </div>
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" placeholder="seu@email.com">
+      </div>
+      <div class="form-group">
+        <label for="telefone">Telefone</label>
+        <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX">
+      </div>
+      <div class="form-group">
+        <label for="data-nascimento">Data de nascimento</label>
+        <input type="date" id="data-nascimento" name="data-nascimento">
+      </div>
+
+      <button class="btn-salvar-perfil">Salvar alterações</button>
+    </div>
+
+    <div class="profile-card">
       <h2>Segurança</h2>
-      <button class="btn-alterar-senha">Alterar senha</button>
+      <button class="btn-outline">Alterar senha</button>
       <button class="btn-logout">Sair da conta</button>
     </div>
-  </div>
-
+  </main>
+</div>
 </body>
 </html>

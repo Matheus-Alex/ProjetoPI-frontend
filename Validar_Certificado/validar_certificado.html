@@ -8,160 +8,152 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<div class="dash">
 
-  <!-- Cabeçalho -->
-  <div class="page-header">
-    <h1>Validar Certificado</h1>
-    <p>Importe o arquivo e analise o certificado do aluno antes de aprovar ou recusar</p>
-  </div>
-
-  <div class="grid">
-
-    <!-- Card: Importar arquivo -->
-    <div class="card">
-      <div class="card-title">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#1D3E73" stroke-width="2">
-          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-          <polyline points="17 8 12 3 7 8"/>
-          <line x1="12" y1="3" x2="12" y2="15"/>
-        </svg>
-        <h2>Importar certificado</h2>
+  <aside class="sidebar">
+    <div class="sb-profile">
+      <div class="avatar">AL</div>
+      <div class="sb-profile-info"><p class="name">Aurora L.</p><p class="role">Coordenador</p></div>
+    </div>
+    <div class="sb-menu-icon"><span></span><span></span><span></span></div>
+    <nav class="sb-nav">
+      <a href="../Dashboard/daskboard.html" class="sb-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Dashboard
+      </a>
+      <a href="../Cadastro/cadastro.html" class="sb-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Cadastro
+      </a>
+      <div class="sb-item active">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>Validar Certificados
       </div>
-      <p class="card-desc">Selecione ou arraste o arquivo do certificado para validação. Formatos aceitos: PDF, JPG, PNG.</p>
+      <a href="../Historico/historico.html" class="sb-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Histórico
+      </a>
+      <a href="../Perfil/perfil.html" class="sb-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Inf. do Aluno
+      </a>
+    </nav>
+    <div class="sb-footer">
+      <a href="../configurações/configuracoes.html" class="sb-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>Configurações
+      </a>
+    </div>
+  </aside>
 
-      <div class="upload-area" id="upload-area">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#F08A01" stroke-width="1.5">
-          <path d="M4 16v1a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-1"/>
-          <polyline points="16 6 12 2 8 6"/>
-          <line x1="12" y1="2" x2="12" y2="14"/>
-        </svg>
-        <p>Arraste o arquivo aqui ou <span>clique para selecionar</span></p>
-        <p class="upload-hint">PDF, JPG ou PNG — máx. 10 MB</p>
-      </div>
-
-      <label for="file-input" class="visually-hidden">Selecione arquivo do certificado</label>
-      <input type="file" id="file-input" accept="application/pdf,image/jpeg,image/png" required>
-
-      <button class="btn btn-primary" id="btn-validar">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M9 11l3 3L22 4"/>
-          <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
-        </svg>
-        Validar certificado
-      </button>
+  <main class="main">
+    <div class="page-header">
+      <h1>Validar Certificado</h1>
+      <p>Importe o arquivo e analise o certificado do aluno antes de aprovar ou recusar</p>
     </div>
 
-    <!-- Card: Recusar / Aprovar -->
-    <div class="card">
-      <div class="card-title">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#c62828" stroke-width="2">
-          <circle cx="12" cy="12" r="10"/>
-          <line x1="15" y1="9" x2="9" y2="15"/>
-          <line x1="9" y1="9" x2="15" y2="15"/>
-        </svg>
-        <h2 class="danger">Recusar certificado</h2>
+    <div class="grid-2">
+
+      <div class="card-pad">
+        <div class="card-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1D3E73" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          <h2>Importar certificado</h2>
+        </div>
+        <p class="card-desc">Selecione ou arraste o arquivo do certificado para validação. Formatos aceitos: PDF, JPG, PNG.</p>
+
+        <div class="upload-area" id="upload-area">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#F08A01" stroke-width="1.5"><path d="M4 16v1a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-1"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="14"/></svg>
+          <p>Arraste o arquivo aqui ou <span>clique para selecionar</span></p>
+          <p class="upload-hint">PDF, JPG ou PNG — máx. 10 MB</p>
+        </div>
+        <input type="file" id="file-input" title="Selecione um arquivo do certificado" accept="application/pdf,image/jpeg,image/png" />
+
+        <button class="btn btn-primary" id="btn-validar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          Validar certificado
+        </button>
       </div>
-      <p class="card-desc">Selecione o motivo da recusa e adicione uma observação para o aluno.</p>
 
-      <label class="field-label" for="motivo-recusa">
-        Motivo da recusa <span class="req">*</span>
-      </label>
-      <select id="motivo-recusa" name="motivo-recusa" aria-label="Motivo para recusar certificado">
-        <option value="">Selecione um motivo...</option>
-        <option value="ilegivel">Documento ilegível</option>
-        <option value="incorreto">Informações incorretas</option>
-        <option value="regras">Não atende às regras do curso</option>
-        <option value="duplicado">Certificado duplicado</option>
-        <option value="outro">Outro</option>
-      </select>
+      <div class="card-pad">
+        <div class="card-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c62828" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+          <h2 class="danger">Recusar certificado</h2>
+        </div>
+        <p class="card-desc">Selecione o motivo da recusa e adicione uma observação para o aluno.</p>
 
-      <label class="field-label" for="obs-recusa">Observação para o aluno</label>
-      <textarea
-        id="obs-recusa"
-        name="obs-recusa"
-        placeholder="Descreva o motivo com mais detalhes para que o aluno possa corrigir e reenviar..."
-      ></textarea>
+        <label class="field-label" for="motivo-recusa">Motivo da recusa <span class="req">*</span></label>
+        <select id="motivo-recusa" name="motivo-recusa">
+          <option value="">Selecione um motivo...</option>
+          <option value="ilegivel">Documento ilegível</option>
+          <option value="incorreto">Informações incorretas</option>
+          <option value="regras">Não atende às regras do curso</option>
+          <option value="duplicado">Certificado duplicado</option>
+          <option value="outro">Outro</option>
+        </select>
 
-      <button class="btn btn-danger" id="btn-recusar">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="12" cy="12" r="10"/>
-          <line x1="15" y1="9" x2="9" y2="15"/>
-          <line x1="9" y1="9" x2="15" y2="15"/>
-        </svg>
-        Confirmar recusa
-      </button>
+        <label class="field-label" for="obs-recusa">Observação para o aluno</label>
+        <textarea id="obs-recusa" placeholder="Descreva o motivo com mais detalhes para que o aluno possa corrigir e reenviar..."></textarea>
 
-      <div class="divider"></div>
+        <button class="btn btn-danger" id="btn-recusar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+          Confirmar recusa
+        </button>
 
-      <div class="section-label">Ou, se estiver tudo certo</div>
+        <div class="divider"></div>
+        <div class="section-label">Ou, se estiver tudo certo</div>
 
-      <button class="btn btn-success" id="btn-aprovar">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M20 6L9 17l-5-5"/>
-        </svg>
-        Aprovar certificado
-      </button>
+        <button class="btn btn-success" id="btn-aprovar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+          Aprovar certificado
+        </button>
+      </div>
+
     </div>
+  </main>
+</div>
 
-  </div>
+<script>
+  const uploadArea = document.getElementById('upload-area');
+  const fileInput  = document.getElementById('file-input');
 
-  <script>
-    const uploadArea = document.getElementById('upload-area');
-    const fileInput  = document.getElementById('file-input');
+  uploadArea.addEventListener('click', () => fileInput.click());
 
-    uploadArea.addEventListener('click', () => fileInput.click());
+  uploadArea.addEventListener('dragover', e => {
+    e.preventDefault();
+    uploadArea.style.background = 'var(--orange-pale)';
+    uploadArea.style.borderColor = 'var(--orange)';
+  });
 
-    uploadArea.addEventListener('dragover', e => {
-      e.preventDefault();
-      uploadArea.style.background = 'var(--orange-pale)';
-      uploadArea.style.borderColor = 'var(--orange)';
-    });
+  uploadArea.addEventListener('dragleave', () => {
+    uploadArea.style.background = '';
+    uploadArea.style.borderColor = '';
+  });
 
-    uploadArea.addEventListener('dragleave', () => {
-      uploadArea.style.background = '';
-      uploadArea.style.borderColor = '';
-    });
+  uploadArea.addEventListener('drop', e => {
+    e.preventDefault();
+    uploadArea.style.background = '';
+    uploadArea.style.borderColor = '';
+    const file = e.dataTransfer.files[0];
+    if (file) uploadArea.querySelector('p').textContent = 'Arquivo selecionado: ' + file.name;
+  });
 
-    uploadArea.addEventListener('drop', e => {
-      e.preventDefault();
-      uploadArea.style.background = '';
-      uploadArea.style.borderColor = '';
-      const file = e.dataTransfer.files[0];
-      if (file) uploadArea.querySelector('p').textContent = 'Arquivo selecionado: ' + file.name;
-    });
+  fileInput.addEventListener('change', () => {
+    if (fileInput.files[0])
+      uploadArea.querySelector('p').textContent = 'Arquivo selecionado: ' + fileInput.files[0].name;
+  });
 
-    fileInput.addEventListener('change', () => {
-      if (fileInput.files[0])
-        uploadArea.querySelector('p').textContent = 'Arquivo selecionado: ' + fileInput.files[0].name;
-    });
+  document.getElementById('btn-validar').addEventListener('click', () => {
+    if (!fileInput.files[0]) { alert('Selecione um arquivo antes de validar.'); return; }
+    alert('Certificado "' + fileInput.files[0].name + '" enviado para validação!');
+  });
 
-    document.getElementById('btn-validar').addEventListener('click', () => {
-      if (!fileInput.files[0]) {
-        alert('Selecione um arquivo antes de validar.');
-        return;
-      }
-      alert('Certificado "' + fileInput.files[0].name + '" enviado para validação!');
-    });
+  document.getElementById('btn-recusar').addEventListener('click', () => {
+    const motivo = document.getElementById('motivo-recusa');
+    if (!motivo.value) { alert('Selecione o motivo da recusa antes de continuar.'); motivo.focus(); return; }
+    if (confirm('Confirmar recusa do certificado?')) {
+      alert('Certificado recusado. O aluno será notificado.');
+      motivo.value = '';
+      document.getElementById('obs-recusa').value = '';
+    }
+  });
 
-    document.getElementById('btn-recusar').addEventListener('click', () => {
-      const motivo = document.getElementById('motivo-recusa');
-      if (!motivo.value) {
-        alert('Selecione o motivo da recusa antes de continuar.');
-        motivo.focus();
-        return;
-      }
-      if (confirm('Confirmar recusa do certificado?')) {
-        alert('Certificado recusado. O aluno será notificado.');
-        motivo.value = '';
-        document.getElementById('obs-recusa').value = '';
-      }
-    });
-
-    document.getElementById('btn-aprovar').addEventListener('click', () => {
-      if (confirm('Confirmar aprovação do certificado?'))
-        alert('Certificado aprovado com sucesso!');
-    });
-  </script>
-
+  document.getElementById('btn-aprovar').addEventListener('click', () => {
+    if (confirm('Confirmar aprovação do certificado?')) alert('Certificado aprovado com sucesso!');
+  });
+</script>
 </body>
 </html>

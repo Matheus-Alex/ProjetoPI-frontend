@@ -13,7 +13,7 @@
     <main class="container">
         <h1>Senac</h1>
 
-        <form action="#" method="post">
+        <form id="loginForm" action="#" method="post">
 
             <div class="input-box">
                 <input
@@ -52,11 +52,23 @@
         </form>
 
         <div class="register-link">
-            <p>Não tem uma conta? <a href="#">Cadastre-se</a></p>
+            <p>Não tem uma conta? <a href="../Cadastro/cadastro.html">Cadastre-se</a></p>
         </div>
 
           <!-- Conecte o historico.js aqui quando quiser ativar busca e exclusão -->
   <!-- <script src="historico.js"></script> -->
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Armazena que o usuário fez login
+      localStorage.setItem('userLogged', 'true');
+      localStorage.setItem('userName', document.getElementById('usuario').value);
+      
+      // Redireciona para o dashboard
+      window.location.href = '../Dashboard/daskboard.html';
+    });
+  </script>
 
     </main>
 

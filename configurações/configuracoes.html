@@ -146,6 +146,16 @@
   fileInput.addEventListener('change', () => {
     if (fileInput.files[0]) uploadArea.querySelector('p').textContent = 'Arquivo selecionado: ' + fileInput.files[0].name;
   });
+
+  // Funcionalidade do botão Sair da conta
+  document.querySelector('.btn-sair').addEventListener('click', function(e) {
+    e.preventDefault();
+    if (confirm('Tem certeza que deseja sair?')) {
+      sessionStorage.clear();
+      localStorage.removeItem('userLogged');
+      window.location.href = '../Login/login.html';
+    }
+  });
 </script>
 </body>
 </html>

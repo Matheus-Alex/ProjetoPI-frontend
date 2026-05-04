@@ -40,7 +40,7 @@
                     messageEl.style.display = 'block';
                     btnEl.disabled = false;
                     btnEl.textContent = 'Login';
-                } else if (response.message) {
+                } else if (response.accessToken) {
                     messageEl.style.color = '#4CAF50';
                     messageEl.textContent = 'Login realizado com sucesso!';
                     messageEl.style.display = 'block';
@@ -48,7 +48,13 @@
                     // Aguarda um pouco e redireciona
                     setTimeout(() => {
                         window.location.href = '/Dashboard/daskboard.html';
-                    }, 1000);
+                    }, 800);
+                } else {
+                    messageEl.style.color = '#c62828';
+                    messageEl.textContent = 'Erro desconhecido. Tente novamente.';
+                    messageEl.style.display = 'block';
+                    btnEl.disabled = false;
+                    btnEl.textContent = 'Login';
                 }
             } catch (error) {
                 messageEl.style.color = '#c62828';

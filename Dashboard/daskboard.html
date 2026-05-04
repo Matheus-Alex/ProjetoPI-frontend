@@ -55,6 +55,9 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="#9aa0b4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
         <input type="text" placeholder="Pesquisar...">
       </div>
+      <button onclick="logout()" style="background: #c62828; color: white; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-size: 14px;">
+        <span>🚪 Sair</span>
+      </button>
     </div>
 
     <div class="main-header">
@@ -110,10 +113,15 @@
         <div class="metric-value"></div>
         <div class="metric-sub"><span class="badge badge-down">     %</span><span class="metric-compare">    </span></div>
       </div>
+      <div class="metric-card">
+        <div class="metric-label">Certificados rejeitados</div>
+        <div class="metric-value">0</div>
+        <div class="metric-sub"><span class="badge badge-down">-  %</span><span class="metric-compare">em relação ao mês anterior</span></div>
+      </div>
     </div>
 </main>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script type="module" src="dashboard.js"></script>
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script> -->
 </body>
 </html>

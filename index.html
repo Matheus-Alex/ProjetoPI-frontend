@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Certificados - Senac</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="public/css/global.css">
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #1D3E73 0%, #F08A01 100%);
+      font-family: 'Poppins', sans-serif;
+    }
+    .welcome-container {
+      text-align: center;
+      background: white;
+      padding: 60px 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      max-width: 500px;
+    }
+    .welcome-container h1 {
+      color: #1D3E73;
+      margin-bottom: 20px;
+      font-size: 2.5em;
+    }
+    .welcome-container p {
+      color: #666;
+      margin-bottom: 30px;
+      font-size: 1.1em;
+    }
+    .welcome-container .btn-login {
+      background: linear-gradient(135deg, #1D3E73 0%, #2d5aa3 100%);
+      color: white;
+      border: none;
+      padding: 14px 40px;
+      font-size: 1.1em;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-decoration: none;
+      display: inline-block;
+      font-weight: 600;
+    }
+    .welcome-container .btn-login:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(29, 62, 115, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="welcome-container">
+    <h1>Bem-vindo</h1>
+    <p>Sistema de Certificados da Senac</p>
+    <p style="font-size: 0.95em; color: #999;">Gerencie e valide certificados de forma segura e eficiente</p>
+    <a href="Login/login.html" class="btn-login">Acessar Sistema</a>
+  </div>
+</body>
+</html>

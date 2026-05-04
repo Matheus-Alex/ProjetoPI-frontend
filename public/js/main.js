@@ -2,12 +2,13 @@
 // Scripts Globais - Sistema de Certificados Senac
 // ────────────────────────────────────────────────────────────
 
+import APIClient from './api-client.js';
+
 /* Verificar se usuário está logado */
 function checkUserLogin() {
-  const isLogged = localStorage.getItem('userLogged');
   const currentPage = window.location.pathname;
   
-  if (!isLogged && !currentPage.includes('login')) {
+  if (!APIClient.isAuthenticated() && !currentPage.includes('login')) {
     // Redirecionar para login se não estiver autenticado
     window.location.href = '/Login/login.html';
   }
@@ -16,10 +17,7 @@ function checkUserLogin() {
 /* Logout do usuário */
 function logout() {
   if (confirm('Tem certeza que deseja sair?')) {
-    sessionStorage.clear();
-    localStorage.removeItem('userLogged');
-    localStorage.removeItem('userName');
-    window.location.href = '/Login/login.html';
+    APIClient.logout();
   }
 }
 

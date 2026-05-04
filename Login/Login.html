@@ -9,16 +9,66 @@
     <title>Login — Senac</title>
 </head>
 <body>
+    <script type="module">
+        import APIClient from '../public/js/api-client.js';
+
+        // Se já está logado, redireciona para dashboard
+        if (APIClient.isAuthenticated()) {
+            window.location.href = '/Dashboard/daskboard.html';
+        }
+
+        // Event listener para o formulário de login
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
+            const messageEl = document.getElementById('loginMessage');
+            const btnEl = document.getElementById('loginBtn');
+
+            // Desabilita o botão durante o login
+            btnEl.disabled = true;
+            btnEl.textContent = 'Entrando...';
+            messageEl.style.display = 'none';
+
+            try {
+                const response = await APIClient.login(email, senha);
+
+                if (response.error) {
+                    messageEl.style.color = '#c62828';
+                    messageEl.textContent = response.error;
+                    messageEl.style.display = 'block';
+                    btnEl.disabled = false;
+                    btnEl.textContent = 'Login';
+                } else if (response.message) {
+                    messageEl.style.color = '#4CAF50';
+                    messageEl.textContent = 'Login realizado com sucesso!';
+                    messageEl.style.display = 'block';
+                    
+                    // Aguarda um pouco e redireciona
+                    setTimeout(() => {
+                        window.location.href = '/Dashboard/daskboard.html';
+                    }, 1000);
+                }
+            } catch (error) {
+                messageEl.style.color = '#c62828';
+                messageEl.textContent = 'Erro ao fazer login. Tente novamente.';
+                messageEl.style.display = 'block';
+                btnEl.disabled = false;
+                btnEl.textContent = 'Login';
+            }
+        });
+    </script>
 
     <main class="container">
         <h1>Senac</h1>
 
-        <form id="loginForm" action="#" method="post">
+        <form id="loginForm">
 
             <div class="input-box">
                 <input
-                    id="usuario"
-                    name="usuario"
+                    id="email"
+                    name="email"
                     type="email"
                     placeholder="seu@email.com"
                     autocomplete="email"
@@ -47,7 +97,8 @@
                 <a href="#">Esqueci a senha</a>
             </div>
 
-            <button type="submit">Login</button>
+            <button type="submit" id="loginBtn">Login</button>
+            <p id="loginMessage" style="margin-top: 1rem; text-align: center; display: none;"></p>
 
         </form>
 

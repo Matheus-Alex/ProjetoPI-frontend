@@ -9,68 +9,10 @@
     <title>Login — Senac</title>
 </head>
 <body>
-    <script type="module">
-        import APIClient from '../public/js/api-client.js';
-
-        // Se já está logado, redireciona para dashboard
-        if (APIClient.isAuthenticated()) {
-            window.location.href = '/Dashboard/daskboard.html';
-        }
-
-        // Event listener para o formulário de login
-        document.getElementById('loginForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-            const email = document.getElementById('email').value;
-            const senha = document.getElementById('senha').value;
-            const messageEl = document.getElementById('loginMessage');
-            const btnEl = document.getElementById('loginBtn');
-
-            // Desabilita o botão durante o login
-            btnEl.disabled = true;
-            btnEl.textContent = 'Entrando...';
-            messageEl.style.display = 'none';
-
-            try {
-                const response = await APIClient.login(email, senha);
-
-                if (response.error) {
-                    messageEl.style.color = '#c62828';
-                    messageEl.textContent = response.error;
-                    messageEl.style.display = 'block';
-                    btnEl.disabled = false;
-                    btnEl.textContent = 'Login';
-                } else if (response.accessToken) {
-                    messageEl.style.color = '#4CAF50';
-                    messageEl.textContent = 'Login realizado com sucesso!';
-                    messageEl.style.display = 'block';
-                    
-                    // Aguarda um pouco e redireciona
-                    setTimeout(() => {
-                        window.location.href = '/Dashboard/daskboard.html';
-                    }, 800);
-                } else {
-                    messageEl.style.color = '#c62828';
-                    messageEl.textContent = 'Erro desconhecido. Tente novamente.';
-                    messageEl.style.display = 'block';
-                    btnEl.disabled = false;
-                    btnEl.textContent = 'Login';
-                }
-            } catch (error) {
-                messageEl.style.color = '#c62828';
-                messageEl.textContent = 'Erro ao fazer login. Tente novamente.';
-                messageEl.style.display = 'block';
-                btnEl.disabled = false;
-                btnEl.textContent = 'Login';
-            }
-        });
-    </script>
-
     <main class="container">
         <h1>Senac</h1>
 
         <form id="loginForm">
-
             <div class="input-box">
                 <input
                     id="email"
@@ -105,29 +47,55 @@
 
             <button type="submit" id="loginBtn">Login</button>
             <p id="loginMessage" style="margin-top: 1rem; text-align: center; display: none;"></p>
-
         </form>
 
         <div class="register-link">
-            <p>Não tem uma conta? <a href="../Cadastro/cadastro.html">Cadastre-se</a></p>
+            <p>Não tem uma conta? <a href="#">Cadastre-se</a></p>
         </div>
-
-          <!-- Conecte o historico.js aqui quando quiser ativar busca e exclusão -->
-  <!-- <script src="historico.js"></script> -->
-  <script>
-    document.getElementById('loginForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      // Armazena que o usuário fez login
-      localStorage.setItem('userLogged', 'true');
-      localStorage.setItem('userName', document.getElementById('usuario').value);
-      
-      // Redireciona para o dashboard
-      window.location.href = '../Dashboard/daskboard.html';
-    });
-  </script>
-
     </main>
 
+<script>
+// Credenciais demo
+const DEMO_USERS = [
+  { email: 'admin@senac.br', senha: '123456', nome: 'Aurora Lima', role: 'Coordenador' }
+];
+
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const email = document.getElementById('email').value.trim();
+  const senha = document.getElementById('senha').value;
+  const messageEl = document.getElementById('loginMessage');
+  const btnEl = document.getElementById('loginBtn');
+
+  btnEl.disabled = true;
+  btnEl.textContent = 'Entrando...';
+
+  setTimeout(() => {
+    const user = DEMO_USERS.find(u => u.email === email && u.senha === senha);
+    
+    if (user) {
+      localStorage.setItem('senac_logged', 'true');
+      localStorage.setItem('senac_user', JSON.stringify(user));
+      localStorage.setItem('token', 'demo-token');
+      localStorage.setItem('user', JSON.stringify(user));
+
+      document.getElementById('loginMessage').innerHTML = '✅ Redirecionando...';
+      document.getElementById('loginMessage').style.color = '#2e7d32';
+      document.getElementById('loginMessage').style.display = 'block';
+
+      // ✅ CAMINHO ABSOLUTO - FUNCIONA NO NETLIFY
+      setTimeout(() => {
+        window.location.href = '/Dashboard/daskboard.html';
+      }, 1000);
+    } else {
+      document.getElementById('loginMessage').innerHTML = '❌ Credenciais inválidas<br><small>admin@senac.br / 123456</small>';
+      document.getElementById('loginMessage').style.color = '#c62828';
+      document.getElementById('loginMessage').style.display = 'block';
+      btnEl.disabled = false;
+      btnEl.textContent = 'Login';
+    }
+  }, 800);
+});
+</script>
 </body>
 </html>

@@ -1,15 +1,13 @@
 // ────────────────────────────────────────────────────────────
-// Certificados Script - Sistema de Certificados Senac
+// Certificados Script - Sistema de Certificados Senac (CORRIGIDO)
 // ────────────────────────────────────────────────────────────
 
 import APIClient from '../public/js/api-client.js';
 
-// Verifica autenticação ao carregar a página
 checkUserLogin();
 
 let certificadoAtualId = null;
 
-// Inicializa os listeners quando DOM está pronto
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initCertificados);
 } else {
@@ -17,14 +15,16 @@ if (document.readyState === 'loading') {
 }
 
 function initCertificados() {
-  // Setup upload drag & drop
+  setupUploadEvents();
+  setupButtons();
+  carregarCertificados();
+}
+
+function setupUploadEvents() {
   const uploadArea = document.getElementById('upload-area');
   const fileInput = document.getElementById('file-input');
-  const btnValidar = document.getElementById('btn-validar');
-  const btnAprovar = document.getElementById('btn-aprovar');
-  const btnRecusar = document.getElementById('btn-recusar');
 
-  if (uploadArea) {
+  if (uploadArea && fileInput) {
     uploadArea.addEventListener('click', () => fileInput.click());
     uploadArea.addEventListener('dragover', (e) => {
       e.preventDefault();
@@ -38,36 +38,32 @@ function initCertificados() {
       uploadArea.style.borderColor = '#ddd';
       if (e.dataTransfer.files.length > 0) {
         fileInput.files = e.dataTransfer.files;
+        updateUploadText(fileInput.files[0]?.name);
       }
     });
-  }
 
-  if (fileInput) {
     fileInput.addEventListener('change', (e) => {
       const file = e.target.files[0];
       if (file) {
-        uploadArea.querySelector('p').textContent = `Arquivo: ${file.name}`;
+        updateUploadText(file.name);
       }
     });
   }
-
-  if (btnValidar) {
-    btnValidar.addEventListener('click', validarCertificado);
-  }
-
-  if (btnAprovar) {
-    btnAprovar.addEventListener('click', aprovarCertificado);
-  }
-
-  if (btnRecusar) {
-    btnRecusar.addEventListener('click', recusarCertificado);
-  }
-
-  // Carrega certificados pendentes
-  carregarCertificados();
 }
 
-// Valida e faz upload do certificado
+function updateUploadText(filename) {
+  const uploadArea = document.getElementById('upload-area');
+  if (uploadArea && filename) {
+    uploadArea.querySelector('p').textContent = `Arquivo: ${filename}`;
+  }
+}
+
+function setupButtons() {
+  document.getElementById('btn-validar')?.addEventListener('click', validarCertificado);
+  document.getElementById('btn-aprovar')?.addEventListener('click', aprovarCertificado);
+  document.getElementById('btn-recusar')?.addEventListener('click', recusarCertificado);
+}
+
 async function validarCertificado() {
   const fileInput = document.getElementById('file-input');
   const file = fileInput.files[0];
@@ -89,7 +85,6 @@ async function validarCertificado() {
       certificadoAtualId = response.id || response.certificado_id;
       showToast('Certificado validado com sucesso!', 'success');
       
-      // Mostra detalhes do certificado se disponíveis
       if (response.usuario_nome) {
         document.querySelector('.card-desc').textContent = 
           `Certificado de ${response.usuario_nome} - ${response.curso_nome}`;
@@ -100,16 +95,13 @@ async function validarCertificado() {
   }
 }
 
-// Aprova o certificado
 async function aprovarCertificado() {
   if (!certificadoAtualId) {
     showToast('Nenhum certificado para aprovar', 'warning');
     return;
   }
 
-  if (!confirm('Tem certeza que deseja aprovar este certificado?')) {
-    return;
-  }
+  if (!confirm('✅ Aprovar este certificado? Ele aparecerá no histórico.')) return;
 
   try {
     const response = await APIClient.aceitarCertificado(certificadoAtualId);
@@ -117,18 +109,16 @@ async function aprovarCertificado() {
     if (response.error) {
       showToast(`Erro: ${response.error}`, 'error');
     } else {
-      showToast('Certificado aprovado com sucesso!', 'success');
-      // Limpa o formulário
-      document.getElementById('file-input').value = '';
-      certificadoAtualId = null;
-      carregarCertificados();
+      showToast('✅ Certificado APROVADO e adicionado ao histórico!', 'success');
+      resetForm();
+      // *** IMPORTANTE: Recarrega histórico em outra aba se estiver aberta ***
+      window.dispatchEvent(new CustomEvent('historico:reload'));
     }
   } catch (error) {
     showToast('Erro ao aprovar certificado', 'error');
   }
 }
 
-// Recusa o certificado
 async function recusarCertificado() {
   if (!certificadoAtualId) {
     showToast('Nenhum certificado para recusar', 'warning');
@@ -143,9 +133,7 @@ async function recusarCertificado() {
     return;
   }
 
-  if (!confirm('Tem certeza que deseja recusar este certificado?')) {
-    return;
-  }
+  if (!confirm('❌ Recusar este certificado? Ele aparecerá no histórico.')) return;
 
   try {
     const response = await APIClient.rejeitarCertificado(
@@ -156,28 +144,32 @@ async function recusarCertificado() {
     if (response.error) {
       showToast(`Erro: ${response.error}`, 'error');
     } else {
-      showToast('Certificado recusado com sucesso!', 'success');
-      // Limpa o formulário
-      document.getElementById('file-input').value = '';
-      document.getElementById('motivo-recusa').value = '';
-      document.getElementById('obs-recusa').value = '';
-      certificadoAtualId = null;
-      carregarCertificados();
+      showToast('❌ Certificado RECUSADO e adicionado ao histórico!', 'success');
+      resetForm();
+      // *** IMPORTANTE: Recarrega histórico em outra aba se estiver aberta ***
+      window.dispatchEvent(new CustomEvent('historico:reload'));
     }
   } catch (error) {
     showToast('Erro ao recusar certificado', 'error');
   }
 }
 
-// Carrega certificados pendentes
+function resetForm() {
+  document.getElementById('file-input').value = '';
+  document.getElementById('motivo-recusa').value = '';
+  document.getElementById('obs-recusa').value = '';
+  certificadoAtualId = null;
+  const uploadArea = document.getElementById('upload-area');
+  if (uploadArea) {
+    uploadArea.querySelector('p').textContent = 'Arraste o arquivo aqui ou clique para selecionar';
+  }
+}
+
 async function carregarCertificados() {
   try {
     const certificados = await APIClient.getCertificados();
-
     if (Array.isArray(certificados)) {
-      // Filtra certificados pendentes
       const pendentes = certificados.filter(c => c.status === 'pendente');
-      
       if (pendentes.length === 0) {
         showToast('Nenhum certificado pendente', 'info');
       }
@@ -186,6 +178,3 @@ async function carregarCertificados() {
     console.error('Erro ao carregar certificados:', error);
   }
 }
-
-// Exporta para uso global
-window.APIClient = APIClient;

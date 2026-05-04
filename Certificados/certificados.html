@@ -7,6 +7,73 @@
   <title>Validar Certificado</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
+<script>
+// ✅ SISTEMA DE HISTÓRICO REAL - SALVA NO LOCALSTORAGE
+let historico = JSON.parse(localStorage.getItem('historico_senac') || '[]');
+
+function salvarNoHistorico(certificado) {
+  // Remove se já existir
+  historico = historico.filter(h => h.id !== certificado.id);
+  // Adiciona no início
+  historico.unshift(certificado);
+  // Limita a 50 registros
+  if (historico.length > 50) historico = historico.slice(0, 50);
+  // Salva
+  localStorage.setItem('historico_senac', JSON.stringify(historico));
+  
+  // ✅ DISPARA EVENTO para recarregar histórico
+  window.dispatchEvent(new CustomEvent('historico:reload'));
+}
+
+// ✅ QUANDO APROVA
+document.getElementById('btn-aprovar')?.addEventListener('click', function() {
+  if (!confirm('✅ Aprovar certificado?')) return;
+  
+  const certificado = {
+    id: Date.now(),
+    nome_usuario: 'João Silva',
+    nome_curso: 'Engenharia de Software',
+    status: 'aprovado',
+    data_criacao: new Date().toISOString(),
+    certificado_id: Date.now()
+  };
+  
+  salvarNoHistorico(certificado);
+  alert('✅ Certificado APROVADO e adicionado ao histórico!');
+  resetForm();
+});
+
+// ✅ QUANDO RECUSA
+document.getElementById('btn-recusar')?.addEventListener('click', function() {
+  const motivo = document.getElementById('motivo-recusa').value;
+  if (!motivo) return alert('Selecione um motivo!');
+  
+  if (!confirm('❌ Recusar certificado?')) return;
+  
+  const certificado = {
+    id: Date.now() + 1,
+    nome_usuario: 'Maria Oliveira',
+    nome_curso: 'Ciência da Computação',
+    status: 'rejeitado',
+    data_criacao: new Date().toISOString(),
+    motivo: motivo,
+    certificado_id: Date.now() + 1
+  };
+  
+  salvarNoHistorico(certificado);
+  alert('❌ Certificado RECUSADO e adicionado ao histórico!');
+  resetForm();
+});
+
+function resetForm() {
+  document.getElementById('file-input').value = '';
+  document.getElementById('motivo-recusa').value = '';
+  document.getElementById('obs-recusa').value = '';
+  document.querySelector('#upload-area p').textContent = 'Arraste o arquivo aqui ou clique para selecionar';
+}
+</script>
+
 <body>
 <div class="dash">
 

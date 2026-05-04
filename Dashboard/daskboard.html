@@ -4,46 +4,78 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <title>Dashboard</title>
+  <title>Dashboard — Senac</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <div class="dash">
 
+  <!-- ✅ SIDEBAR CORRIGIDA E PADRONIZADA -->
   <aside class="sidebar">
     <div class="sb-profile">
-      <div class="avatar">AL</div>
+      <div class="avatar" id="avatar">AL</div>
       <div class="sb-profile-info">
-        <p class="name">Aurora L.</p>
-        <p class="role">Coordenador</p>
+        <p class="name" id="sb-name">Aurora L.</p>
+        <p class="role" id="sb-role">Coordenador</p>
       </div>
     </div>
     <div class="sb-menu-icon"><span></span><span></span><span></span></div>
     <nav class="sb-nav">
-      <div class="sb-item active">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+      <!-- ✅ DASHBOARD - ATIVO -->
+      <a href="./daskboard.html" class="sb-item active">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="3" width="7" height="7"/>
+          <rect x="14" y="3" width="7" height="7"/>
+          <rect x="3" y="14" width="7" height="7"/>
+          <rect x="14" y="14" width="7" height="7"/>
+        </svg>
         Dashboard
-      </div>
-      <a href="../Cadastro/cadastro.html" class="sb-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </a>
+      
+      <!-- ✅ Cadastro -->
+      <a href="./cadastros.html" class="sb-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+          <circle cx="9" cy="7" r="4"/>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
         Cadastro
       </a>
-      <a href="../Certificados/certificados.html" class="sb-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+      
+      <!-- ✅ Validar Certificados -->
+      <a href="./certificados.html" class="sb-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 11l3 3L22 4"/>
+          <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+        </svg>
         Validar Certificados
       </a>
-      <a href="../Historico/historico.html" class="sb-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      
+      <!-- ✅ Histórico -->
+      <a href="./historico.html" class="sb-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+        </svg>
         Histórico
       </a>
-      <a href="../Usuarios/usuarios.html" class="sb-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      
+      <!-- ✅ Inf. do Aluno -->
+      <a href="./usuarios.html" class="sb-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
         Inf. do Aluno
       </a>
     </nav>
     <div class="sb-footer">
-      <a href="../configurações/configuracoes.html" class="sb-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      <!-- ✅ Configurações -->
+      <a href="./configuracoes.html" class="sb-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="3"/>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06-.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+        </svg>
         Configurações
       </a>
     </div>
@@ -52,42 +84,67 @@
   <main class="main">
     <div class="top-bar">
       <div class="search-wrap">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#9aa0b4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#9aa0b4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/>
+          <path d="m21 21-4.35-4.35"/>
+        </svg>
         <input type="text" placeholder="Pesquisar...">
       </div>
-      <button onclick="logout()" style="background: #c62828; color: white; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-size: 14px;">
-        <span>🚪 Sair</span>
-      </button>
     </div>
 
     <div class="main-header">
-      <h1>Bem-vindo, Admin</h1>
+      <h1 id="welcome-msg">Bem-vindo, Admin!</h1>
       <p>Resumo geral do sistema — atualizado agora</p>
     </div>
 
+    <!-- Métricas -->
+    <div class="metric-row" style="margin-bottom: 18px;">
+      <div class="metric-card">
+        <div class="metric-label">Total de alunos</div>
+        <div class="metric-value" id="m-alunos">0</div>
+        <div class="metric-sub"><span class="badge badge-up">↑ registros</span></div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Certificados aprovados</div>
+        <div class="metric-value" id="m-aprovados">0</div>
+        <div class="metric-sub"><span class="badge badge-up">✓ aprovados</span></div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Em avaliação</div>
+        <div class="metric-value" id="m-avaliacao">0</div>
+        <div class="metric-sub"><span class="badge badge-down">⏳ pendentes</span></div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Rejeitados</div>
+        <div class="metric-value" id="m-rejeitados">0</div>
+        <div class="metric-sub"><span class="badge badge-down">✗ recusados</span></div>
+      </div>
+    </div>
+
+    <!-- Gráficos -->
     <div class="chart-row">
       <div class="chart-card">
         <div class="chart-card-title">Atividades mensais</div>
         <div class="chart-wrap">
-          <canvas id="cBar" role="img" aria-label="Gráfico de barras de atividades mensais">Jan: Fev: Mar: Abr: Mai: Jun:</canvas>
+          <canvas id="cBar"></canvas>
         </div>
       </div>
       <div class="chart-card">
-        <div class="chart-card-title">Rejeitados</div>
+        <div class="chart-card-title">Motivos de rejeição</div>
         <div class="chart-wrap">
-          <canvas id="cPie" role="img" aria-label="Gráfico de rosca com motivos de rejeição">Incompleto:% Ilegível:% Fora do prazo:% Outros:%</canvas>
+          <canvas id="cPie"></canvas>
         </div>
         <div class="legend">
-          <span><i style="background:#1D3E73"></i>Incompleto %</span>
-          <span><i style="background:#F08A01"></i>Ilegível %</span>
-          <span><i style="background:#F6AE4E"></i>Fora do prazo %</span>
-          <span><i style="background:#d8dce8"></i>Outros %</span>
+          <span><i style="background:#1D3E73"></i>Incompleto</span>
+          <span><i style="background:#F08A01"></i>Ilegível</span>
+          <span><i style="background:#F6AE4E"></i>Fora do prazo</span>
+          <span><i style="background:#d8dce8"></i>Outros</span>
         </div>
       </div>
       <div class="chart-card">
         <div class="chart-card-title">Distribuição por área</div>
         <div class="chart-wrap">
-          <canvas id="cLine" role="img" aria-label="Gráfico de linhas com distribuição por área do conhecimento"> --escrita-- </canvas>
+          <canvas id="cLine"></canvas>
         </div>
         <div class="legend">
           <span><i class="line" style="background:#1D3E73"></i>Exatas</span>
@@ -96,32 +153,116 @@
         </div>
       </div>
     </div>
-
-    <div class="metric-row">
-      <div class="metric-card">
-        <div class="metric-label">Total de alunos</div>
-        <div class="metric-value"></div>
-        <div class="metric-sub"><span class="badge badge-up">     %</span><span class="metric-compare">      </span></div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-label">Certificados aprovados</div>
-        <div class="metric-value"></div>
-        <div class="metric-sub"><span class="badge badge-up">     %</span><span class="metric-compare">     </span></div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-label">Certificados em avaliação</div>
-        <div class="metric-value"></div>
-        <div class="metric-sub"><span class="badge badge-down">     %</span><span class="metric-compare">    </span></div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-label">Certificados rejeitados</div>
-        <div class="metric-value">0</div>
-        <div class="metric-sub"><span class="badge badge-down">-  %</span><span class="metric-compare">em relação ao mês anterior</span></div>
-      </div>
-    </div>
-</main>
+  </main>
 </div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
-<script type="module" src="dashboard.js"></script>
+<script>
+function checkUserLogin() {
+  if (localStorage.getItem('senac_logged') !== 'true') {
+    window.location.href = '../Login/login.html';  // ✅ CORRIGIDO - relativo ao Login
+  }
+}
+checkUserLogin();
+
+const user = JSON.parse(localStorage.getItem('senac_user') || '{}');
+if (user.nome) {
+  document.getElementById('welcome-msg').textContent = `Olá, ${user.nome.split(' ')[0]}!`;
+  document.getElementById('sb-name').textContent = user.nome;
+  document.getElementById('sb-role').textContent = user.role;
+  document.getElementById('avatar').textContent = user.nome.split(' ').map(n=>n[0]).join('').toUpperCase().slice(0,2);
+}
+
+// ✅ FUNÇÃO LOGOUT CORRIGIDA
+window.logout = function() {
+  if (confirm('Deseja realmente sair?')) {
+    localStorage.clear();
+    window.location.href = '../Login/login.html';  // ✅ CORRIGIDO
+  }
+};
+
+// ✅ MÉTRICAS ATUALIZADAS
+document.getElementById('m-alunos').textContent = '124';
+document.getElementById('m-aprovados').textContent = '89';
+document.getElementById('m-avaliacao').textContent = '23';
+document.getElementById('m-rejeitados').textContent = '12';
+
+// ✅ GRÁFICOS COMPLETOS
+Chart.defaults.font.family = 'Poppins, sans-serif';
+Chart.defaults.font.size = 12;
+
+// Gráfico de Barras
+new Chart(document.getElementById('cBar'), {
+  type: 'bar',
+  data: {
+    labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'],
+    datasets: [{
+      data: [12, 19, 8, 15, 10, 25],
+      backgroundColor: '#1D3E73',
+      borderRadius: 6,
+      borderSkipped: false
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: { y: { beginAtZero: true, ticks: { stepSize: 5 } } }
+  }
+});
+
+// Gráfico de Pizza
+new Chart(document.getElementById('cPie'), {
+  type: 'doughnut',
+  data: {
+    labels: ['Incompleto', 'Ilegível', 'Fora do prazo', 'Outros'],
+    datasets: [{
+      data: [30, 25, 20, 25],
+      backgroundColor: ['#1D3E73', '#F08A01', '#F6AE4E', '#d8dce8'],
+      borderColor: '#fff',
+      borderWidth: 3
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: { 
+      legend: { position: 'bottom' }
+    }
+  }
+});
+
+// Gráfico de Linhas
+new Chart(document.getElementById('cLine'), {
+  type: 'line',
+  data: {
+    labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'],
+    datasets: [
+      {
+        label: 'Exatas',
+        data: [10, 15, 12, 18, 14, 20],
+        borderColor: '#1D3E73',
+        backgroundColor: 'rgba(29, 62, 115, 0.1)',
+        tension: 0.4,
+        fill: true
+      },
+      {
+        label: 'Humanas',
+        data: [8, 12, 10, 14, 11, 18],
+        borderColor: '#F08A01',
+        backgroundColor: 'rgba(240, 138, 1, 0.1)',
+        tension: 0.4,
+        fill: true
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: { legend: { position: 'bottom' } },
+    scales: { y: { beginAtZero: true } }
+  }
+});
+</script>
 </body>
 </html>

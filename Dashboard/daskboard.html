@@ -33,7 +33,7 @@
       </a>
       
       <!-- ✅ Cadastro -->
-      <a href="./cadastros.html" class="sb-item">
+      <a href="../Cadastro/cadastros.html" class="sb-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
           <circle cx="9" cy="7" r="4"/>
@@ -44,7 +44,7 @@
       </a>
       
       <!-- ✅ Validar Certificados -->
-      <a href="./certificados.html" class="sb-item">
+      <a href="../Certificados/certificados.html" class="sb-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M9 11l3 3L22 4"/>
           <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
@@ -53,7 +53,7 @@
       </a>
       
       <!-- ✅ Histórico -->
-      <a href="./historico.html" class="sb-item">
+      <a href="../Historico/historico.html" class="sb-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
         </svg>
@@ -61,7 +61,7 @@
       </a>
       
       <!-- ✅ Inf. do Aluno -->
-      <a href="./usuarios.html" class="sb-item">
+      <a href="../Usuarios/usuarios.html" class="sb-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
           <circle cx="12" cy="7" r="4"/>
@@ -71,7 +71,7 @@
     </nav>
     <div class="sb-footer">
       <!-- ✅ Configurações -->
-      <a href="./configuracoes.html" class="sb-item">
+      <a href="../configurações/configuracoes.html" class="sb-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <circle cx="12" cy="12" r="3"/>
           <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06-.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
@@ -160,7 +160,7 @@
 <script>
 function checkUserLogin() {
   if (localStorage.getItem('senac_logged') !== 'true') {
-    window.location.href = '../Login/login.html';  // ✅ CORRIGIDO - relativo ao Login
+    window.location.href = '../Login/Login.html';  // ✅ CORRIGIDO - relativo ao Login
   }
 }
 checkUserLogin();
@@ -177,7 +177,7 @@ if (user.nome) {
 window.logout = function() {
   if (confirm('Deseja realmente sair?')) {
     localStorage.clear();
-    window.location.href = '../Login/login.html';  // ✅ CORRIGIDO
+    window.location.href = '../Login/Login.html';  // ✅ CORRIGIDO
   }
 };
 
